@@ -1,0 +1,7 @@
+{
+  "name": "BugBug YAML Schema v1",
+  "schemaVersion": "1.0",
+  "sourceUrl": "https://app.bugbug.io/api/v2/schema/yaml/v1/",
+  "downloadedAt": "2026-06-22",
+  "format": "JSON Schema Draft-07"
+}

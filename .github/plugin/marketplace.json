@@ -1,0 +1,19 @@
+{
+  "name": "bugbug",
+  "owner": {
+    "name": "BugBug.io",
+    "email": "info@bugbug.io"
+  },
+  "metadata": {
+    "description": "Development marketplace for BugBug Plugin.",
+    "version": "13.39.1"
+  },
+  "plugins": [
+    {
+      "name": "bugbug",
+      "description": "BugBug skills and MCP workflows for AI agents",
+      "version": "13.39.1",
+      "source": "./"
+    }
+  ]
+}

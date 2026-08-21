@@ -1,0 +1,61 @@
+schema_version: '1.0'
+schema_type: test
+data:
+  name: 'Login smoke test'
+  slug: 'login-smoke-test'
+  runtime: browser
+  screen_size: desktop
+  tags:
+    - smoke
+  groups:
+    - component_source: 'cookie-consent'
+      variables:
+        consent_button_selector: "xpath=//button[@data-testid='accept-cookies']"
+    - group_name: 'Login flow'
+      slug: 'login-flow'
+      steps:
+        - action: goto
+          name: 'Open login page'
+          action_details:
+            url: 'https://example.com/login'
+          waiting_conditions:
+            - condition: documentComplete
+              is_active: true
+            - condition: networkIdle
+              expected: '2'
+              timeout: 10
+              is_active: true
+        - action: type
+          name: 'Enter email'
+          action_details:
+            selector: "xpath=//input[@name='email']"
+            value: '{{email}}'
+            has_secret_value: false
+        - action: type
+          name: 'Enter password'
+          action_details:
+            selector: "xpath=//input[@name='password']"
+            value: '{{password}}'
+            has_secret_value: true
+        - action: click
+          name: 'Submit'
+          action_details:
+            selector: "xpath=//button[@type='submit']"
+        - action: ifCondition
+          name: 'Dismiss optional announcement'
+          action_details:
+            selector: "xpath=//*[contains(@class, 'announcement')]"
+            assertion_property: visible
+            assertion_type: equal
+            assertion_expected_value: true
+          conditional_steps:
+            - action: click
+              name: 'Close announcement'
+              action_details:
+                selector: "xpath=//*[contains(@class, 'announcement')]//button"
+        - action: assert
+          name: 'Dashboard loaded'
+          action_details:
+            assertion_property: pageUrlIs
+            assertion_type: contain
+            assertion_expected_value: '/dashboard'

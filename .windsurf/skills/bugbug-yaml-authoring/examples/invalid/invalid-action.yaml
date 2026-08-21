@@ -1,0 +1,9 @@
+schema_version: '1.0'
+schema_type: component
+data:
+  component_name: 'Invalid action'
+  steps:
+    - action: fill
+      action_details:
+        selector: "xpath=//input[@name='email']"
+        value: 'demo@example.com'

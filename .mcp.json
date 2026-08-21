@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "bugbug": {
+      "type": "http",
+      "url": "https://mcp.bugbug.io/mcp",
+      "oauth_resource": "https://mcp.bugbug.io/mcp",
+      "_meta": {
+        "ideToolIconPath": "./assets/bugbug-icon.svg",
+        "ideToolIconRendersAsTemplate": "true"
+      }
+    }
+  }
+}

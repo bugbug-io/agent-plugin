@@ -1,0 +1,5 @@
+schema_type: test
+data:
+  name: 'Missing schema version'
+  runtime: browser
+  screen_size: desktop

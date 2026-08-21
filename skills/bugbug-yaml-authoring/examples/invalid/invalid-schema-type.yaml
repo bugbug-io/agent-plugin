@@ -1,0 +1,4 @@
+schema_version: '1.0'
+schema_type: flow
+data:
+  name: 'Invalid schema type'

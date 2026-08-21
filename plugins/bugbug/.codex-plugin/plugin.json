@@ -1,0 +1,33 @@
+{
+  "name": "bugbug",
+  "version": "13.39.1",
+  "description": "BugBug skills and MCP workflows for AI agents",
+  "author": {
+    "name": "BugBug.io",
+    "email": "info@bugbug.io",
+    "url": "https://bugbug.io"
+  },
+  "homepage": "https://github.com/bugbug-io/agent-plugin",
+  "repository": "https://github.com/bugbug-io/agent-plugin",
+  "license": "MIT",
+  "keywords": ["bugbug","skills","mcp","testing","automation"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "BugBug",
+    "shortDescription": "BugBug skills and MCP for AI agents",
+    "longDescription": "Use this BugBug integration to configure the BugBug MCP server and guide agents through BugBug test authoring, diagnosis, and safe automation workflows.",
+    "developerName": "BugBug.io",
+    "developerEmail": "info@bugbug.io",
+    "category": "Coding",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "defaultPrompt": ["Help me configure BugBug MCP.", "Help me diagnose a BugBug test failure."],
+    "websiteURL": "https://bugbug.io",
+    "privacyPolicyURL": "https://bugbug.io/privacy-policy/",
+    "termsOfServiceURL": "https://bugbug.io/terms-and-conditions/",
+    "composerIcon": "./assets/bugbug-icon.svg",
+    "logo": "./assets/bugbug-icon.svg",
+    "screenshots": [],
+    "brandColor": "#4F46E5"
+  }
+}

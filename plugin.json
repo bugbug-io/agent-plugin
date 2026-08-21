@@ -1,0 +1,15 @@
+{
+  "name": "bugbug",
+  "description": "BugBug skills and MCP workflows for AI agents",
+  "version": "13.39.1",
+  "author": {
+    "name": "BugBug.io",
+    "email": "info@bugbug.io"
+  },
+  "homepage": "https://github.com/bugbug-io/agent-plugin",
+  "repository": "https://github.com/bugbug-io/agent-plugin",
+  "license": "MIT",
+  "keywords": ["bugbug","skills","mcp","testing","automation"],
+  "skills": ["./skills/"],
+  "mcpServers": "./.mcp.json"
+}
