@@ -9,7 +9,7 @@
   "homepage": "https://github.com/bugbug-io/agent-plugin",
   "repository": "https://github.com/bugbug-io/agent-plugin",
   "license": "MIT",
-  "keywords": ["bugbug","skills","mcp","testing","automation"],
+  "keywords": ["bugbug","skills","mcp","testing","automation","ai","agents","workflow","diagnosis","authoring","integration","plugin"],
   "logo": "./assets/bugbug-icon.svg",
   "skills": "./skills/"
 }

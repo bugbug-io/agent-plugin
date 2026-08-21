@@ -10,7 +10,7 @@
   "homepage": "https://github.com/bugbug-io/agent-plugin",
   "repository": "https://github.com/bugbug-io/agent-plugin",
   "license": "MIT",
-  "keywords": ["bugbug","skills","mcp","testing","automation"],
+  "keywords": ["bugbug","skills","mcp","testing","automation","ai","agents","workflow","diagnosis","authoring","integration","plugin"],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
@@ -20,8 +20,18 @@
     "developerName": "BugBug.io",
     "developerEmail": "info@bugbug.io",
     "category": "Coding",
-    "capabilities": ["Interactive", "Read", "Write"],
-    "defaultPrompt": ["Help me configure BugBug MCP.", "Help me diagnose a BugBug test failure."],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write",
+      "Automation",
+      "Testing",
+      "MCP"
+    ],
+    "defaultPrompt": [
+      "Show me all available projects.",
+      "Help me diagnose a BugBug test failure."
+    ],
     "websiteURL": "https://bugbug.io",
     "privacyPolicyURL": "https://bugbug.io/privacy-policy/",
     "termsOfServiceURL": "https://bugbug.io/terms-and-conditions/",

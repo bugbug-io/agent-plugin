@@ -1,9 +1,11 @@
 {
   "name": "bugbug",
-  "description": "BugBug skills and MCP workflows for AI agents",
   "version": "13.39.1",
+  "description": "BugBug skills and MCP workflows for AI agents",
   "author": {
-    "name": "BugBug.io"
+    "name": "BugBug.io",
+    "email": "info@bugbug.io",
+    "url": "https://bugbug.io"
   },
   "homepage": "https://github.com/bugbug-io/agent-plugin",
   "repository": "https://github.com/bugbug-io/agent-plugin",

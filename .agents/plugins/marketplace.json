@@ -8,7 +8,7 @@
       "name": "bugbug",
       "source": {
         "source": "local",
-        "path": "./plugins/bugbug"
+        "path": "./"
       },
       "policy": {
         "installation": "AVAILABLE",
