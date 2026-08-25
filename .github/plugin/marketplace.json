@@ -6,13 +6,13 @@
   },
   "metadata": {
     "description": "Development marketplace for BugBug Plugin.",
-    "version": "14.0.0"
+    "version": "14.0.2"
   },
   "plugins": [
     {
       "name": "bugbug",
       "description": "BugBug skills and MCP workflows for AI agents",
-      "version": "14.0.0",
+      "version": "14.0.2",
       "source": "./"
     }
   ]
