@@ -1,72 +1,64 @@
-<div align="center">
+![BugBug logo](https://bugbug.io/favicon-96x96.png)
 
-![BugBug Logo](https://bugbug.io/favicon-96x96.png)
+# BugBug Agent Plugin
 
-# BugBug Plugin
-
-**Plugin for AI agents**
-
-Marketplace-first plugin package for AI coding agents that work with [BugBug](https://bugbug.io).
-
-</div>
-
-The package bundles:
-
-- BugBug skills for agent workflows.
-- Plugin manifests for Codex, Claude, Cursor, Grok, VS Code, and GitHub Copilot.
-- MCP client configuration for the hosted BugBug MCP server.
-
-## Bundled Skills
-
-The canonical skills come from
-[`@bugbug-io/agent-skills`](../agent-skills/skills/) and are copied into `dist/`
-at build time:
-
-| Skill                        | Purpose                                                            |
-| ---------------------------- | ------------------------------------------------------------------ |
-| `bugbug-context-discovering` | Discovers project/repo/tested-app context. Run before other skills. |
-| `bugbug-tests-planning`      | Plans BugBug end-to-end and UI test coverage before creation.       |
-| `bugbug-tests-authoring`     | Creates and maintains BugBug tests from an approved plan.            |
-| `bugbug-steps-authoring`     | Chooses step types and builds step payloads.                        |
-| `bugbug-selectors-authoring` | Authors, reviews, repairs, and optimizes element selectors.         |
-| `bugbug-test-run-debugging`  | Validates and debugs test runs, classifying failures.               |
-| `bugbug-tests-refactoring`   | Analyzes and refactors tests, groups, components, and suites.       |
-| `bugbug-yaml-authoring`      | Creates, validates, repairs, and explains BugBug YAML.              |
-| `bugbug-project-reporting`   | Builds read-only project health reports for PM/QA audiences.        |
-
-The MCP surface the plugin points at (50 tools, 19 resources, 9 prompts) is
-documented in the [MCP README](../mcp/README.md#tools).
-
-The publishable plugin is generated into `dist/` by the `tsup` build: skills are
-copied from this package's canonical `skills/`, and every manifest is rendered
-from the sources in `src/` with values substituted from
-`manifest.config.ts`. Do not hand-edit `dist/`.
-
-## Which Capability Should I Use?
-
-- Install/use this plugin when you want an AI coding agent to work with BugBug skills and MCP configuration from one package.
-- Use MCP when the agent needs live BugBug platform data, API mutations, test runs, run artifacts, YAML import/export, or failure diagnosis.
-- Use skills when the agent is creating, reviewing, repairing, or validating tests and needs workflow rules before touching BugBug data.
-- Use the YAML schema package when tooling needs the canonical BugBug YAML v1 JSON Schema assets.
-- Use local CLI or workspace tooling for local file edits; MCP is the live BugBug platform bridge, not a filesystem editor.
-
-## Installation
-
-The recommended way to install this plugin is the BugBug CLI. Choose the target
-AI client explicitly with `--agent`:
+Install BugBug's skills and hosted MCP connection into your AI client with the
+BugBug CLI:
 
 ```sh
 npx @bugbug-io/cli plugin --agent=<agent>
 ```
 
-Available agents: `codex`, `claude`, `cursor`, `grok`, `vscode`, `copilot`.
+Choose exactly one supported client: `cursor`, `claude`, `vscode`, `codex`, or
+`copilot`. Use `--dry-run` to preview the installation.
 
-### Alternative: manual MCP setup
+The installer does not accept `--token`. The AI client you select completes its
+own MCP OAuth sign-in after installation. The plugin connects to the production
+endpoint at `https://mcp.bugbug.io/mcp`.
 
-Use either bundled MCP manifest, `.mcp.json` or `mcp.json`, as the baseline and provide `API_TOKEN` through your agent client's environment or secret manager. Both files have identical content.
+## Features
 
-The server command is:
+- **Ready in one command** — Set up Claude Code, Codex, Cursor, GitHub Copilot,
+  or VS Code with the BugBug CLI; the selected client completes OAuth sign-in.
+- **Turn requirements into coverage** — Use BugBug's workflow guidance and live
+  project context to plan coverage, then create tests from an approved plan.
+- **Build with live BugBug context** — Combine **50 MCP tools** and **8 workflow
+  prompts** with **9 skills** so your agent can inspect the tests, suites,
+  profiles, and project details it needs.
+- **Debug from evidence** — Investigate failed runs with run details, failure
+  diagnostics, screenshots, and DOM snapshots, guided by a safe debugging
+  workflow.
+- **Keep suites reliable as they grow** — Review selectors, tests, reusable
+  components, and suites with BugBug-specific guidance before making targeted
+  improvements.
+- **Turn run history into decisions** — Summarize project and run health for
+  actionable QA and product insights, using live data instead of guesswork.
 
-```sh
-npx -y @bugbug-io/mcp-server@latest
-```
+Skills provide safe workflow guidance; MCP supplies the live BugBug data and
+actions. Changes to BugBug resources require the user's explicit authorization.
+
+## What you get
+
+Skills are available on all BugBug plans. MCP access requires Pro or higher.
+
+### Bundled skills
+
+| Skill                        | Capability                                                               |
+| ---------------------------- | ------------------------------------------------------------------------ |
+| `bugbug-context-discovering` | Discover the BugBug project, repository, and tested-application context. |
+| `bugbug-project-reporting`   | Create read-only project health reports for PM and QA audiences.         |
+| `bugbug-selectors-authoring` | Author, review, repair, and optimize element selectors.                  |
+| `bugbug-steps-authoring`     | Choose step types and create or update step payloads.                    |
+| `bugbug-test-run-debugging`  | Investigate test runs and classify failures.                             |
+| `bugbug-tests-authoring`     | Create and maintain tests from an approved plan.                         |
+| `bugbug-tests-planning`      | Plan end-to-end and UI test coverage.                                    |
+| `bugbug-tests-refactoring`   | Analyze and refactor tests, groups, components, and suites.              |
+| `bugbug-yaml-authoring`      | Create, validate, repair, and explain BugBug YAML.                       |
+
+## When to use it
+
+Use the plugin when you want an AI coding client to work with BugBug tests and
+test results. Use its skills for workflow guidance and its MCP connection for
+live BugBug data, runs, exports, diagnostics, and explicit mutations.
+
+For the complete MCP registry, see the [MCP server docs](https://docs.bugbug.io/ai-testing/mcp/mcp-tools).

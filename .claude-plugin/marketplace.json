@@ -8,7 +8,7 @@
     {
       "name": "bugbug",
       "description": "BugBug skills and MCP workflows for AI agents",
-      "version": "14.0.7",
+      "version": "14.0.8",
       "source": "./",
       "author": {
         "name": "BugBug.io"
