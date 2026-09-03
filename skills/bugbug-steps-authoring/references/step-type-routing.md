@@ -10,6 +10,7 @@
 | Switch tab, window, or frame context | `switchContext` | Optional | Use when the flow changes browsing context, such as switching to an iframe, another tab, or another window. Provide selectors for iframes. |
 | Click an element | `click`, `dblClick`, `rightClick` | Yes | Pick the exact click gesture the user performs. |
 | Press or release the mouse button | `mouseDown`, `mouseUp` | Yes | Use for drag-like or press-and-hold interactions that are not simple clicks. |
+| Move the mouse to an element or viewport coordinate | `mouseMove` | Optional | Use `isTargetDocument: true` with `clientX` and `clientY` for viewport coordinates; otherwise provide element selectors and an interaction position. |
 | Drag one element or coordinate to another | `dragAndDrop` | Yes | Provide selectors when dragging from or dropping onto elements; omit only for coordinate-based dragging. |
 | Hover over an element | `hover` | Yes | Use when hover reveals UI or changes state. |
 | Scroll the page or a container | `scroll` | Optional | Provide selectors when scrolling inside a container or toward a target element; omit for window-level scrolls. |
