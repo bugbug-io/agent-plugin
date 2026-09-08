@@ -178,6 +178,7 @@ needs verification against the actual page state.
 
 Resolve bundled resource paths relative to this skill directory.
 
+- `assets/bugbug-icon.svg` is the OpenAI UI icon for this skill.
 - Read `references/strategies.md` to learn more about selectors generation
   strategies and resolving selectors in known situations.
 - Read `references/presets.md` for `selectorsPresets` payload shapes, the YAML

@@ -232,6 +232,7 @@ For explicit YAML import/export, generation, validation, repair, or local
 
 Resolve bundled resource paths relative to this skill directory.
 
+- `assets/bugbug-icon.svg` is the OpenAI UI icon for this skill.
 - Load `bugbug-context-discovering` during Preflight.
 - Load `bugbug-tests-planning` before designing tests or reusable assets.
 - Load `bugbug-steps-authoring` for step payloads and names.

@@ -61,6 +61,7 @@ it, and do not ask the user to create or link a `bugbug.yaml`.
 
 Resolve bundled resource paths relative to this skill directory.
 
+- `assets/bugbug-icon.svg` is the OpenAI UI icon for this skill.
 - Read `references/project-context.md` to resolve the target BugBug project.
 - Read `references/repository-state.md` before relying on local source evidence
   or editing local files.

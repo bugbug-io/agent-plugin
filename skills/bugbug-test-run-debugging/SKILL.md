@@ -181,6 +181,7 @@ If you catch yourself thinking any of these, return to Phase 1.
 
 Resolve bundled resource paths relative to this skill directory.
 
+- `assets/bugbug-icon.svg` is the OpenAI UI icon for this skill.
 - Load `bugbug-context-discovering` during Preflight.
 - Read `references/selectors-troubleshooting.md` for selector failure diagnosis
   and repair.

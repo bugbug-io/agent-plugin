@@ -145,6 +145,7 @@ flowchart TD
 
 Resolve bundled resource paths relative to this skill directory.
 
+- `assets/bugbug-icon.svg` is the OpenAI UI icon for this skill.
 - Search or read targeted sections in
   `references/common-websites-tests-guidebook.md` for common web, blog, landing
   page, or docs flows.

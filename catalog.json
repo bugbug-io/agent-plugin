@@ -7,14 +7,17 @@
       "resources": [
         "references/project-context.md",
         "references/repository-state.md",
-        "references/tested-app-repository-context.md"
+        "references/tested-app-repository-context.md",
+        "assets/bugbug-icon.svg"
       ],
       "relatedSkills": []
     },
     {
       "name": "bugbug-project-reporting",
       "description": "Creates read-only BugBug project health reports for PM and QA audiences using run-history aggregates and optional export-based inventory analysis. Use for project health, trends, release risk, flakiness, stale tests, or coverage reporting. Run bugbug-context-discovering first.",
-      "resources": [],
+      "resources": [
+        "assets/bugbug-icon.svg"
+      ],
       "relatedSkills": [
         "bugbug-context-discovering"
       ]
@@ -24,7 +27,8 @@
       "description": "Authors, reviews, repairs, and optimizes BugBug element selectors. Use before creating or changing any DOM-targeted step, assertion, condition, visual region, drag target, upload target, or selector preset. Run bugbug-context-discovering first.",
       "resources": [
         "references/presets.md",
-        "references/strategies.md"
+        "references/strategies.md",
+        "assets/bugbug-icon.svg"
       ],
       "relatedSkills": [
         "bugbug-context-discovering"
@@ -36,6 +40,7 @@
       "resources": [
         "references/assertion-routing.md",
         "references/step-type-routing.md",
+        "assets/bugbug-icon.svg",
         "steps/"
       ],
       "relatedSkills": [
@@ -51,7 +56,8 @@
         "references/selectors-troubleshooting.md",
         "references/variables-troubleshooting.md",
         "references/visual-regression-review.md",
-        "references/waiting-conditions-results-check.md"
+        "references/waiting-conditions-results-check.md",
+        "assets/bugbug-icon.svg"
       ],
       "relatedSkills": [
         "bugbug-context-discovering",
@@ -63,7 +69,8 @@
       "description": "Creates and maintains BugBug tests with AI agents from an approved plan. Use for creating tests, editing steps, organizing reusable assets, optimizing reuse, or producing BugBug automation changes through CLI, SDK, or MCP surfaces. Defers to bugbug-tests-planning when tests still need to be designed or scoped.",
       "resources": [
         "references/community-best-practices.md",
-        "references/email-flows.md"
+        "references/email-flows.md",
+        "assets/bugbug-icon.svg"
       ],
       "relatedSkills": [
         "bugbug-context-discovering",
@@ -81,7 +88,8 @@
         "references/common-websites-tests-guidebook.md",
         "references/ecommerce-tests-guidebook.md",
         "references/saas-tests-guidebook.md",
-        "scripts/discover-site.mjs"
+        "scripts/discover-site.mjs",
+        "assets/bugbug-icon.svg"
       ],
       "relatedSkills": [
         "bugbug-context-discovering",
@@ -96,7 +104,8 @@
         "references/extract-component.md",
         "references/project-analysis.md",
         "references/readability-rename.md",
-        "references/suite-organization.md"
+        "references/suite-organization.md",
+        "assets/bugbug-icon.svg"
       ],
       "relatedSkills": [
         "bugbug-context-discovering",
@@ -117,6 +126,7 @@
         "references/semantic-validation.md",
         "references/step-actions.md",
         "references/variables.md",
+        "assets/bugbug-icon.svg",
         "assets/bugbug-yaml-v1.schema.json",
         "assets/schema-metadata.json"
       ],

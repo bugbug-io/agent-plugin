@@ -86,6 +86,7 @@ Every BugBug YAML v1 document contains:
 
 Resolve bundled resource paths relative to this skill directory.
 
+- `assets/bugbug-icon.svg` is the OpenAI UI icon for this skill.
 - Use `assets/bugbug-yaml-v1.schema.json` for validation.
 - Use `assets/schema-metadata.json` for bundled schema metadata and live fallback
   URL.

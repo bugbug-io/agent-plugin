@@ -58,6 +58,7 @@ description: Creates and updates BugBug test steps. Use when choosing step types
 
 Resolve bundled resource paths relative to this skill directory.
 
+- `assets/bugbug-icon.svg` is the OpenAI UI icon for this skill.
 - Read `references/step-type-routing.md` for choosing the correct step type.
 - Read `references/assertion-routing.md` for choosing assertion fields.
 - Read generated `steps/` files for full step payload definitions.

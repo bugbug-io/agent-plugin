@@ -57,6 +57,7 @@ description: Analyzes and refactors BugBug tests, groups, components, suites, na
 
 Resolve bundled resource paths relative to this skill directory.
 
+- `assets/bugbug-icon.svg` is the OpenAI UI icon for this skill.
 - Load `bugbug-context-discovering` during Preflight.
 - Load `bugbug-selectors-authoring` before selector review or selector changes.
 - Read `references/project-analysis.md` for export-based analysis and its smell
