@@ -2,12 +2,12 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.bugbug-io/mcp",
   "title": "BugBug",
-  "description": "BugBug skills and MCP workflows for AI agents",
+  "description": "BugBug workflows for AI agents workflows for AI agents",
   "repository": {
     "url": "https://github.com/bugbug-io/agent-plugin",
     "source": "github"
   },
-  "version": "14.2.0",
+  "version": "14.3.0",
   "remotes": [
     {
       "type": "streamable-http",
