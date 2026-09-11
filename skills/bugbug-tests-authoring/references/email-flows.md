@@ -5,15 +5,15 @@ invitation flows all block on an email nobody can read from the tested app. BugB
 Inbox unblocks them: every test run gets its own throwaway mailbox, reachable
 from inside the test.
 
-## The two addresses
+## The email address and inbox identifier
 
-Both are built from `testRunId`, a built-in variable that BugBug assigns a new
+Both values are built from `testRunId`, a built-in variable that BugBug assigns a new
 value on every run:
 
 | Use | Value |
 | --- | --- |
 | Email address to type into the app | `{{testRunId}}@bugbug-inbox.com` |
-| Inbox page to open in the test | `https://bugbug-inbox.com/{{testRunId}}` |
+| Inbox identifier to open in the test | `{{testRunId}}` |
 
 Use them verbatim. Do not hardcode a run ID, invent a mailbox name, or create a
 variable holding a fixed address — a fixed address collides with itself on the
@@ -50,9 +50,9 @@ by re-registering pays a full signup on every test and depends on run order.
 1. Type `{{testRunId}}@bugbug-inbox.com` into the app's email field with a `type`
    step, exactly as written — BugBug resolves it at run time.
 2. Submit and let the app send its email.
-3. Open the mailbox with a `goto` step to
-   `https://bugbug-inbox.com/{{testRunId}}`. Prefer this over clicking through
-   any UI.
+3. Open the mailbox with an `openInbox` step whose value is `{{testRunId}}`.
+   Prefer this over clicking through any UI or navigating to the inbox URL
+   manually. Remember that `openInbox` always opens inbox in a new tab.
 4. Wait on observable state, never a fixed sleep: assert that the expected
    message or its content is visible. Delivery latency varies, so the assertion
    is what absorbs it.
@@ -65,7 +65,8 @@ by re-registering pays a full signup on every test and depends on run order.
 
 ## Review before running
 
-- The address and inbox URL both use `{{testRunId}}`, with no hardcoded run ID.
+- The email address and `openInbox` value both use `{{testRunId}}`, with no
+  hardcoded run ID.
 - Delivery is covered by an assertion on observable state, not a fixed wait.
 - The extracted code or link comes from the message, not a constant.
 - The final assertion proves the product state changed, not merely that mail was
