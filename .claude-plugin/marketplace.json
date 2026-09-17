@@ -8,7 +8,7 @@
     {
       "name": "bugbug",
       "description": "BugBug workflows for AI agents workflows for AI agents",
-      "version": "14.4.3",
+      "version": "14.5.0",
       "source": "./",
       "author": {
         "name": "BugBug.io"
