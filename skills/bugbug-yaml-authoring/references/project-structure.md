@@ -6,6 +6,7 @@ imports that include tests, suites, components, profiles, or project settings.
 ## Contents
 
 - [Directory Layout](#directory-layout)
+- [Folders](#folders)
 - [Import Identity](#import-identity)
 - [Cross-Object References](#cross-object-references)
 - [File Relationships](#file-relationships)
@@ -42,9 +43,49 @@ Recommended placement:
 - `profiles/*.yaml`: `schema_type: profile` documents with variables and secret
   placeholders.
 
-File names are for humans and repository organization. Import identity comes
-from the document slugs, not from the path. Prefer filenames that match
-`data.slug` when a slug exists, and use readable kebab-case names for new files.
+File names are for humans. Import identity comes from the document slugs, not
+from the file name. Prefer filenames that match `data.slug` when a slug exists,
+and use readable kebab-case names for new files. Subdirectories under `tests/`
+and `components/` are not cosmetic: they are BugBug folders (see
+[Folders](#folders)).
+
+## Folders
+
+Subdirectories of `tests/` and `components/` map to BugBug folders on import and
+are written back on export:
+
+```text
+tests/
+  Checkout/
+    .folder.yaml
+    Guest/
+      guest-checkout.yaml
+  login-smoke-test.yaml
+components/
+  Auth/
+    shared-login.yaml
+```
+
+- `tests/Checkout/Guest/guest-checkout.yaml` puts the test in the test folder
+  `Checkout/Guest`. A file directly under `tests/` stays at the root.
+- Test folders and component folders are separate trees. A directory under
+  `tests/` never holds components, and the reverse.
+- Folders nest up to 5 levels. Directory names are folder names, so keep them
+  free of `\ : * ? " < > |`, and do not use `.` or `..`.
+- Sibling folder names must differ ignoring case: `Checkout/` and `checkout/`
+  conflict.
+- `.folder.yaml` is optional. It only carries a folder description:
+
+  ```yaml
+  schema_version: "1.0"
+  schema_type: folder
+  data:
+    description: Guest and logged-in checkout flows
+  ```
+
+- Moving a file to another directory moves the test or component to that folder
+  on the next import. Keep existing paths from an export unless the user asked
+  to reorganize folders.
 
 ## Import Identity
 

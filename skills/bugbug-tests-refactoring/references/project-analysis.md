@@ -24,6 +24,9 @@ Expected findings:
 - Weak or missing assertions.
 - Vague step, group, component, test, or suite names.
 - Suite drift, especially tests missing from smoke/regression/feature suites.
+- Folder drift: tests or components left at the root next to a folder that fits
+  them, near-duplicate folder names, or folders that hold one item. In an
+  export, folders are the subdirectories of `tests/` and `components/`.
 - Empty notes where operational context matters.
 
 Output format:
@@ -31,4 +34,4 @@ Output format:
 - Severity: high, medium, or low.
 - Evidence: exact test, group, component, suite, or step name/ID.
 - Recommendation: the smallest useful action.
-- Next action: analyze-only, rename, extract component, suite cleanup, or verify.
+- Next action: analyze-only, rename, extract component, suite cleanup, folder cleanup, or verify.

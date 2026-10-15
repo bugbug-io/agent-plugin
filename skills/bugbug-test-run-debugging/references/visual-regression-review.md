@@ -77,7 +77,7 @@ wrong accept hides future regressions.
 
 - **Require explicit user confirmation before accepting.** Recommend the verdict and stop.
 - Only on confirmation, accept the new baseline with
-  `bugbug_resolve_visual_regression_review` using `action=acceptBaseline` and the failed
+  `bugbug_resolve_visual_regression_review` using `solutionType=acceptBaseline` and the failed
   `stepRunId`.
 - If the diff came from unstable dynamic content, prefer fixing the step (mask/stabilize the region,
   or re-target the visual-regression region to the stable visual container). Load
@@ -92,7 +92,7 @@ accept real content, layout, color, or product changes.
 - **Require explicit user confirmation before increasing tolerance.** Recommend the verdict and
   stop.
 - Only on confirmation, increase the allowed difference with
-  `bugbug_resolve_visual_regression_review` using `action=increaseMaxDifference` and the failed
+  `bugbug_resolve_visual_regression_review` using `solutionType=increaseMaxDifference` and the failed
   `stepRunId`.
 - Do not supply a numeric value. The platform sets the new threshold from the observed diff.
 - If noise keeps recurring or the needed tolerance is broad, prefer fixing the visual-regression

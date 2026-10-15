@@ -24,6 +24,7 @@ assets, product flow descriptions, and discovered evidence.
 - Test name, purpose, owner boundary, and run profile.
 - Start URL or target page.
 - Existing components, variables, suites, and profiles to reuse.
+- Target test and component folders, if the plan places assets in folders.
 - New assets to create, if any.
 - Step-level flow: setup, user actions, and expected assertions.
 - Required credentials or test data source. Never invent secrets.
@@ -70,8 +71,22 @@ judgment behind it; *Process Flow* below owns the branching.
      but cannot create them; stop when the required profile does not exist.
    - Do not run broad discovery here. If the plan cannot be executed, report the
      missing planning input and stop instead of improvising the gap.
+   - Resolve the planned folder paths to ids with `bugbug_list_folders`.
 
-2. **Create required variables** Never invent
+2. **Place assets in folders when the plan says so.** Folders are the project's
+   own organization; an agent that invents its own layout scatters tests where
+   nobody looks for them.
+   - Reuse an existing folder that matches the project's convention before
+     creating a new one. Folder names are unique among siblings, ignoring case.
+   - Create a folder only when the plan calls for it. Build nested folders one
+     at a time: create the parent, then pass its id as `parentId`.
+   - A test goes only into a `test` folder and a component only into a
+     `component` folder. Plain groups are never placed in folders.
+   - Folders need a paid plan. On a plan error, tell the user and keep the
+     assets at the root; do not retry.
+   - MCP tools: `bugbug_list_folders`, `bugbug_create_folder`
+
+3. **Create required variables** Never invent
    what only the user knows: credentials, secrets, and test data come from the
    request or existing assets. An invented secret produces a test that fails for
    a misleading reason.
@@ -81,21 +96,23 @@ judgment behind it; *Process Flow* below owns the branching.
    - Use camelCase for variable name.
    - MCP tools: `bugbug_get_variables_list`, `bugbug_create_new_variable`
 
-3. **Create the test shell**
-   - Set its name, notes, and screen-size type. This tool does not assign a suite
-     or run profile.
+4. **Create the test shell**
+   - Set its name, notes, and screen-size type, plus `folderId` when the plan
+     places the test in a folder. This tool does not assign a suite or run
+     profile.
    - Keep the test focused on one user flow.
    - Do not create placeholder tests with vague names or TODO steps. Empty shells
      are fine only as a short-lived step before adding the planned content.
    - MCP tool: `bugbug_create_tests` (batch related test shells in one call)
 
-4. **Create groups or components under the new test**
-   - Use `isComponent: true` only for a genuinely reusable flow.
+5. **Create groups or components under the new test**
+   - Use `isComponent: true` only for a genuinely reusable flow, with
+     `folderId` when the plan places the component in a folder.
    - Keep each group or component focused on one responsibility.
    - Reuse an existing component instead of recreating it.
    - MCP tools: `bugbug_insert_component_into_test`, `bugbug_create_groups`
 
-5. **Add setup steps**
+6. **Add setup steps**
    - Prefer reused auth/session components over logging in through the UI in every
      test.
    - Use direct `goto` navigation when intermediate navigation is not under test.
@@ -108,7 +125,7 @@ judgment behind it; *Process Flow* below owns the branching.
      second run.
    - MCP tool: `bugbug_create_steps`
 
-6. **Add action steps** Waits target observable
+7. **Add action steps** Waits target observable
    state: fixed sleeps trade correctness for the appearance of stability — they
    slow the suite and still flake under load.
    - Load `bugbug-steps-authoring` for step type choice and required fields.
@@ -122,7 +139,7 @@ judgment behind it; *Process Flow* below owns the branching.
      conditions and assertions.
    - MCP tool: `bugbug_create_steps`
 
-7. **Add assertions that prove the flow worked.**
+8. **Add assertions that prove the flow worked.**
    Assertions are the proof, not the actions — a run of green action steps only
    shows commands executed, not that the product did the right thing.
    - Assert the product state after important state changes and at the final
@@ -133,18 +150,18 @@ judgment behind it; *Process Flow* below owns the branching.
    - Do not rely on action steps alone as proof that the flow works.
    - MCP tool: `bugbug_create_steps`
 
-8. **Wire variables and components deliberately.**
+9. **Wire variables and components deliberately.**
    - Use variables instead of hardcoded URLs, credentials, tenant names, and
      repeated form values.
    - Use components for repeated setup, navigation, and flows.
    - Keep destructive actions explicit in names and notes so nobody runs them by
      accident.
 
-9. **Attach the test to its suite.**
-   - Create suite when the suite does not exist.
-   - MCP tool: `bugbug_create_suite`
+10. **Attach the test to its suite.**
+    - Create suite when the suite does not exist.
+    - MCP tool: `bugbug_create_suite`
 
-10. **Review the created test before running it.**
+11. **Review the created test before running it.**
     - The test is independent and does not depend on another test's run order.
     - The setup is minimal: reused auth and targeted data prep.
     - The flow has no artificial waits.
@@ -152,14 +169,14 @@ judgment behind it; *Process Flow* below owns the branching.
     - The assertions prove the intended behavior, not just that commands executed.
     - The test is still one focused flow, not a broad demo script.
 
-11. **Run the created test.** Creation is not complete until the new test has
+12. **Run the created test.** Creation is not complete until the new test has
     been executed at least once to confirm it works.
     - Report the latest run result with the created test assets.
     - Do not mark the test ready without either a passing run or a documented
       external blocker that prevented verification.
     - MCP tool: `bugbug_run_test`, `bugbug_run_suite`
 
-12. **Repair within the original scope.** When an authored test fails, change
+13. **Repair within the original scope.** When an authored test fails, change
     only behavior covered by the original authoring request. Widening scope
     during a repair turns a debugging pass into unreviewed design work, so
     report a genuine external blocker rather than engineering around it.
@@ -177,7 +194,10 @@ flowchart TD
     A -->|yes| C["Validate plan against existing assets<br>(resolve & confirm IDs)"]
     C --> D{"Plan executable?"}
     D -->|missing profile or input| E(["Stop<br>report missing planning input"])
-    D -->|yes| F["Create variables"]
+    D -->|yes| D2{"Planned folders exist?"}
+    D2 -->|no| D3["Create planned folders<br>(parent first)"]
+    D2 -->|yes| F["Create variables"]
+    D3 --> F
     F --> G["Create test shell"]
     G --> H{"Reusable component exists?"}
     H -->|yes| I["Insert existing component"]
@@ -220,7 +240,8 @@ For explicit YAML import/export, generation, validation, repair, or local
 
 ## Output
 
-- Created or reused suite, profile, component, and variable IDs.
+- Created or reused suite, profile, component, folder, and variable IDs.
+- Folder path of each created test and component, or root.
 - Created test ID and test name.
 - Step groups added: setup, actions, assertions.
 - Implemented steps and assertions, including any brittle selectors, missing data

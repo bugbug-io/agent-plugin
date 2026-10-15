@@ -36,13 +36,14 @@ description: Analyzes and refactors BugBug tests, groups, components, suites, na
 
 1. Read the project through the BugBug MCP list and get tools. Use a local
    project export only when the user asks for it.
-2. Analyze naming, duplication, reusable components, selector quality, and suite
-   organization within the requested scope.
+2. Analyze naming, duplication, reusable components, selector quality, suite
+   organization, and folder organization within the requested scope.
 3. Return recommendations when operating in read-only mode.
 4. When mutations are authorized, apply them in this order:
    1. Rename for readability.
    2. Extract reusable components.
    3. Reorganize suites.
+   4. Reorganize folders.
 5. Run affected tests after each mutation batch when a live environment is
    available.
 6. If verification fails, diagnose the failure before continuing with further
@@ -67,3 +68,5 @@ Resolve bundled resource paths relative to this skill directory.
 - Read `references/extract-component.md` before extracting a reusable component.
 - Read `references/readability-rename.md` before bulk readability renames.
 - Read `references/suite-organization.md` before restructuring suites.
+- Read `references/folder-organization.md` before creating, moving, renaming, or
+  deleting folders, or moving tests and components between folders.

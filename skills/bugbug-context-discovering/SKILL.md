@@ -36,8 +36,10 @@ description: Discovers BugBug project, repository, and tested-application contex
 3. Read `references/tested-app-repository-context.md` only when the current
    repository may be the tested application and source evidence would affect the
    work. Skip this step on MCP-only clients.
-4. Carry the discovered project id, repository state, and tested-app evidence
-   into the next BugBug skill.
+4. When the next skill will create, move, or organize tests or components,
+   read the folder structure as described in `references/project-context.md`.
+5. Carry the discovered project id, folder structure, repository state, and
+   tested-app evidence into the next BugBug skill.
 
 ### MCP-Only Clients
 
@@ -50,6 +52,8 @@ it, and do not ask the user to create or link a `bugbug.yaml`.
 ## Output
 
 - Confirmed project id or the blocker preventing confirmation.
+- Test and component folder paths with ids, when the work places or organizes
+  tests or components.
 - Relevant dirty repository files or statement that repository state could not
   be captured.
 - Tested-app source evidence used, or confirmation that none was needed.

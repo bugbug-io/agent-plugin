@@ -67,6 +67,7 @@ marked *(conditional)* run only when their condition holds.
 12. **Design candidate suites & tests** — use the discovered facts and the user brief. Keep each test focused on one user flow; define its preconditions and expected result, but leave exact step payloads for the creation phase.
 13. **Group flows into suites** — split any giant end-to-end scenario (login → order → payment → cancellation) into separate focused tests, one responsibility each. Design clear ownership boundaries (guest vs. authenticated, role-specific paths); prefer a small first version and add suites only for real product boundaries.
 14. **Place the healthcheck test** — always put a focused healthcheck test in a dedicated healthcheck suite.
+15. **Propose folders** — give each planned test and component a folder path (for example `Checkout/Guest`). Follow the project's existing folders when it has any; otherwise propose a shallow layout by product area or role, and only when the plan has enough tests to need one.
 
 **Terminal state:** once suites, tests, and reusable components are designed with preconditions and expected results, hand off to `bugbug-tests-authoring`. Do NOT write exact step payloads here — that is the creation phase's job.
 
@@ -99,7 +100,8 @@ flowchart TD
     N --> O
     O --> P["Group flows into suites<br>(split giant E2E scenarios)"]
     P --> Q["Place healthcheck in its own suite"]
-    Q --> R(["Hand off to creation phase"])
+    Q --> Q2["Propose folder paths<br>(follow existing folders)"]
+    Q2 --> R(["Hand off to creation phase"])
 ```
 
 The terminal state is handing off to the creation phase; it has no outgoing edges. Refreshing evidence after a product change re-enters the flow at the top in a *new* run — it is not a loop within one run.
@@ -117,6 +119,8 @@ This section carries the *why* behind the steps — the judgment the checklist c
 **One test, one flow.** A test that spans login → order → payment → cancellation fails for a dozen unrelated reasons and tells you nothing precise. Split it into focused tests with clear ownership boundaries (guest vs. authenticated, per-role paths). Prefer a small first version and add suites only for real product boundaries — not speculative ones (YAGNI).
 
 **Email-dependent flows are in scope.** Registration, email verification, password reset, magic-link login, and invitations are testable, not blockers to plan around: BugBug gives every run its own throwaway mailbox at `{{testRunId}}@bugbug-inbox.com`, readable during the run. Because the address is different each run, signup never collides with an existing account — so plan registration as a repeatable test. Two consequences for the plan: state which flows depend on a received email so the creation phase wires the mailbox. Do not specify mailbox mechanics here — `bugbug-tests-authoring` owns them.
+
+**Folders are for people browsing the project.** Suites decide what runs together; folders decide where someone finds a test. Match the folders the project already has, because a second competing layout is worse than none. For a new project, keep folders shallow (one or two levels, by product area or role) and skip them for a handful of tests. Tests and components live in separate folder trees. Folders need a paid plan, so mark them as optional when the plan is unknown.
 
 **Design, don't implement.** The output of planning is suites, tests, and reusable components with preconditions and expected results. Exact step payloads belong to the creation phase; writing them here couples the plan to details that shift once real DOM work begins.
 
@@ -138,6 +142,7 @@ flowchart TD
 - A saved testing plan with bite-sized implementation tasks.
 - Proposed suites, tests, reusable components, variables, roles, preconditions,
   and expected results.
+- Proposed folder path for each test and component, or root.
 - Evidence used, evidence gaps, assumptions, and any missing user input.
 - Clear handoff to `bugbug-tests-authoring` for creating the approved plan.
 

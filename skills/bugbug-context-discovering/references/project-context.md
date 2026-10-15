@@ -35,6 +35,20 @@ expected configuration, not missing evidence:
 - Skip repository state and tested-app source evidence entirely, and record
   that the work is platform-direct rather than YAML-in-repository.
 
+## Folder Structure
+
+Tests and components can live in folders. Each folder has a kind (`test` or
+`component`) and holds only items of that kind; folders nest up to 5 levels.
+
+- After the project is confirmed, read the folder tree with
+  `bugbug_list_folders` (`kind: test` and/or `kind: component`), or the SDK
+  `folders.getTree(kind)`, when the work will create, move, or organize tests or
+  components.
+- Carry each folder's slash-separated path (for example `Checkout/Guest`) and
+  id forward, so later steps pass real `folderId` values instead of guessing.
+- An empty tree means everything is at the project root. That is normal; do not
+  create folders just because none exist.
+
 ## Rules
 
 - Do not create local YAML files as a fallback for missing project context.

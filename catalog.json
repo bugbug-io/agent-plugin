@@ -102,6 +102,7 @@
       "description": "Analyzes and refactors BugBug tests, groups, components, suites, names, and duplication. Use read-only analysis mode unless the user explicitly requests mutations. Run bugbug-context-discovering first.",
       "resources": [
         "references/extract-component.md",
+        "references/folder-organization.md",
         "references/project-analysis.md",
         "references/readability-rename.md",
         "references/suite-organization.md",
