@@ -5,7 +5,7 @@ component.
 
 Workflow:
 
-1. Analyze the local export snapshot and identify duplicated step sequences.
+1. Analyze the project and identify duplicated step sequences.
 2. Pick one canonical group or sequence as the source.
 3. Convert the canonical group to component (tool: `bugbug_convert_group_to_component`).
 4. Insert the component into each affected test (tool: `bugbug_insert_component_into_test`).

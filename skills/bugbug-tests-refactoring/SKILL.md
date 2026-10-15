@@ -18,7 +18,7 @@ description: Analyzes and refactors BugBug tests, groups, components, suites, na
 - Target project, test, suite, or bounded project scope.
 - Requested analysis or refactoring outcome.
 - Explicit mutation authorization when changes are requested.
-- Optional project export and tested-application source context.
+- Optional tested-application source context.
 
 ## Safety
 
@@ -29,11 +29,13 @@ description: Analyzes and refactors BugBug tests, groups, components, suites, na
   the user explicitly accepts unverified cleanup.
 - Stop before mutation when the target IDs, replacement behavior, or acceptance
   of unverified cleanup cannot be confirmed.
+- Do not run shell commands, install packages, or write files outside the
+  workspace without the user's approval.
 
 ## Workflow
 
-1. Prefer one project export snapshot for broad analysis. Use list or get MCP
-   tools only for targeted details or filesystem-less clients.
+1. Read the project through the BugBug MCP list and get tools. Use a local
+   project export only when the user asks for it.
 2. Analyze naming, duplication, reusable components, selector quality, and suite
    organization within the requested scope.
 3. Return recommendations when operating in read-only mode.
@@ -60,7 +62,7 @@ Resolve bundled resource paths relative to this skill directory.
 - `assets/bugbug-icon.svg` is the OpenAI UI icon for this skill.
 - Load `bugbug-context-discovering` during Preflight.
 - Load `bugbug-selectors-authoring` before selector review or selector changes.
-- Read `references/project-analysis.md` for export-based analysis and its smell
+- Read `references/project-analysis.md` for the analysis workflow and its smell
   catalog.
 - Read `references/extract-component.md` before extracting a reusable component.
 - Read `references/readability-rename.md` before bulk readability renames.

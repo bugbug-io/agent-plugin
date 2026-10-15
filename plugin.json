@@ -1,15 +1,45 @@
 {
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "bugbug",
+  "version": "14.13.0",
   "description": "BugBug workflows for AI agents workflows for AI agents",
-  "version": "14.12.0",
   "author": {
     "name": "BugBug.io",
-    "email": "info@bugbug.io"
+    "email": "info@bugbug.io",
+    "url": "https://bugbug.io"
   },
   "homepage": "https://github.com/bugbug-io/agent-plugin",
   "repository": "https://github.com/bugbug-io/agent-plugin",
   "license": "MIT",
   "keywords": ["bugbug","skills","mcp","testing","automation","ai","agents","workflow","diagnosis","authoring","integration","plugin"],
-  "skills": ["./skills/"],
-  "mcpServers": "./.mcp.json"
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "BugBug",
+        "shortDescription": "BugBug workflows for AI agents",
+        "longDescription": "Use this BugBug integration to configure the BugBug MCP server and guide agents through BugBug test authoring, diagnosis, and safe automation workflows.",
+        "developerName": "BugBug.io",
+        "developerEmail": "info@bugbug.io",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Interactive",
+          "Read",
+          "Write"
+        ],
+        "defaultPrompt": [
+          "List my BugBug projects.",
+          "Diagnose the latest failed BugBug test run.",
+          "Plan end-to-end test coverage for my checkout flow."
+        ],
+        "websiteURL": "https://bugbug.io",
+        "supportURL": "https://bugbug.io/contact/",
+        "privacyPolicyURL": "https://bugbug.io/privacy-policy/",
+        "termsOfServiceURL": "https://bugbug.io/terms-and-conditions/",
+        "composerIcon": "./assets/bugbug-icon.svg",
+        "logo": "./assets/bugbug-icon.svg",
+        "screenshots": [],
+        "brandColor": "#4F46E5"
+      }
+    }
+  }
 }

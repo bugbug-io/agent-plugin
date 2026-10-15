@@ -10,7 +10,7 @@ Conventions:
 
 Workflow:
 
-1. Analyze current suites from export YAML or suite list/get tools.
+1. Analyze current suites with the suite list/get tools, or exported YAML if available.
 2. Identify tests missing from expected suites and tests in stale suites.
 3. Propose the smallest suite change set first.
 4. Create / update / delete suites only after explicit user approval.

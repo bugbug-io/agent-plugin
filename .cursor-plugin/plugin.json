@@ -2,7 +2,7 @@
   "name": "bugbug",
   "displayName": "BugBug",
   "description": "BugBug workflows for AI agents workflows for AI agents",
-  "version": "14.12.0",
+  "version": "14.13.0",
   "author": {
     "name": "BugBug.io"
   },
@@ -11,5 +11,6 @@
   "license": "MIT",
   "keywords": ["bugbug","skills","mcp","testing","automation","ai","agents","workflow","diagnosis","authoring","integration","plugin"],
   "logo": "./assets/bugbug-icon.svg",
-  "skills": "./skills/"
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
 }

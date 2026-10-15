@@ -1,13 +1,21 @@
 # Project Analysis
 
-Use one project export snapshot for broad analysis:
+Read the project through the BugBug MCP tools:
 
-1. Run `npx bugbug project export` or `sdk.project.export()`.
-2. Extract the ZIP under `~/.bugbug/tmp/<projectId>/<timestamp>/`.
-3. Record the snapshot timestamp in your findings.
-4. Inspect YAML selectively with grep and targeted reads. Do not page the whole
-   project through MCP unless the client has no filesystem access.
-5. Re-export after mutations if the snapshot may be stale.
+1. Page through `bugbug_list_tests`, `bugbug_list_groups`,
+   `bugbug_list_components`, and `bugbug_list_suites`. Keep page windows small.
+2. Read details with `bugbug_get_test`, `bugbug_get_group`, and
+   `bugbug_get_suite` only for the tests, groups, and suites in scope.
+3. Record when you read the data in your findings.
+4. Stop when the evidence is enough for a recommendation.
+5. Re-read affected tests after mutations; earlier reads may be stale.
+
+Optional local export:
+
+When the user has the `bugbug` CLI installed and asks for a broad, offline
+analysis, ask before running `bugbug project export`. Extract the ZIP into a
+directory the user approves, and inspect the YAML selectively instead of reading
+the whole export.
 
 Expected findings:
 
@@ -21,11 +29,6 @@ Expected findings:
 Output format:
 
 - Severity: high, medium, or low.
-- Evidence: exact file, test, group, component, suite, or step name/ID.
+- Evidence: exact test, group, component, suite, or step name/ID.
 - Recommendation: the smallest useful action.
 - Next action: analyze-only, rename, extract component, suite cleanup, or verify.
-
-Filesystem-less fallback:
-
-Use `bugbug_list_tests`, `bugbug_get_test`, `bugbug_list_groups`,
-`bugbug_list_components`, and suite tools with pagination. Keep page windows small and stop when the evidence is enough for a recommendation.
