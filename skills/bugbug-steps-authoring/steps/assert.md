@@ -19,5 +19,7 @@ Common payload fields are documented in [Common step fields](_common-fields.md).
 
 ## Optional Fields
 
-No step-specific optional fields.
+| Field | Type | Description |
+| --- | --- | --- |
+| `assertionCaseInsensitive` | `boolean \| null` | Ignore letter case in text comparisons. Null uses legacy behavior; omitted updates keep the current setting. |
 

@@ -5,6 +5,7 @@
 - [Fields](#fields)
 - [Assertion Properties](#assertion-properties)
 - [Assertion Types](#assertion-types)
+- [Case Sensitivity](#case-sensitivity)
 - [Examples](#examples)
 
 Use this file for `action: assert` and `action: ifCondition` assertion details.
@@ -18,6 +19,7 @@ Required for all assertions:
 
 Common optional companions:
 
+- `assertion_case_insensitive`: optional boolean or null; see Case Sensitivity below.
 - `assertion_expected_value`: string, number, boolean, or null.
 - `assertion_java_script`: required when `assertion_property: customJavaScript`.
 - `assertion_variable_name`: required when `assertion_property: variableValue`.
@@ -50,15 +52,21 @@ Common optional companions:
 
 ## Assertion Types
 
-Schema-supported values: `contain`, `equal`, `greaterThan`, `lessThan`, `match`, `notContain`, `notEqual`, `any`.
+Schema-supported values: `contain`, `equal`, `greaterThan`, `lessThan`, `match`, `notContain`, `notEqual`, `notMatch`, `any`.
 
 Sensible combinations:
 
 - Boolean element state (`checked`, `exist`, `visible`, `disabled`, and negated variants): use `equal` with `true`.
-- Text/value/page URL/title/clipboard/variable: use `contain`, `equal`, `match`, `notContain`, `notEqual`.
+- Text/value/page URL/title/clipboard/variable: use `contain`, `equal`, `match`, `notContain`, `notEqual`, `notMatch`.
 - Counts and numeric values: use `equal`, `greaterThan`, `lessThan`.
 - `downloadStarted`: use `any` when only the event matters, or text match types when checking a file name.
 - `customJavaScript`: use `equal` with the expected script result.
+
+## Case Sensitivity
+
+Set `assertion_case_insensitive` in `action_details` for `assert` and `ifCondition`: `true` ignores case, `false` respects it. Supported only for text comparisons: text/value, page URL/title/text, clipboard/variable, attribute values, and filenames.
+
+Omission or `null` restores legacy behavior: ordinary `contain`/`notContain` ignores case; equality, regex, and whole-page text respect it. Include only overrides of these defaults; export omits redundant flags.
 
 ## Examples
 
