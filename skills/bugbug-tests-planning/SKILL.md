@@ -37,6 +37,7 @@ YAGNI, and keep tests small and directed.
 - Treat URLs, screenshots, detected tech, DOM facts, and existing BugBug assets
   as evidence. Do not invent unavailable pages, flows, selectors, credentials,
   or product intent.
+- Tags serve filtering, test selection, or reporting; never agent working context.
 - Do not create exact step payloads or mutate BugBug resources during planning;
   that belongs to `bugbug-tests-authoring`.
 - For static HTML, saved DOM snapshots, or page source, inspect only targeted
@@ -137,11 +138,20 @@ flowchart TD
     D -->|repeat| A
 ```
 
+### Tagging Decision
+
+Default to **tags unchanged**. When proposing tags, call `bugbug_list_tags`,
+reuse equivalents, and record names, purpose, targets, and colors for new tags
+(default `#6D28D9`). Creation requires user intent or plan approval; do not ask
+again for explicitly requested changes. Load `bugbug-tests-authoring` and its
+tagging guide for palette choices and mutation rules.
+
 ## Output
 
 - A saved testing plan with bite-sized implementation tasks.
 - Proposed suites, tests, reusable components, variables, roles, preconditions,
   and expected results.
+- Tagging decision: unchanged, or names, purpose, targets, and new-tag colors.
 - Proposed folder path for each test and component, or root.
 - Evidence used, evidence gaps, assumptions, and any missing user input.
 - Clear handoff to `bugbug-tests-authoring` for creating the approved plan.

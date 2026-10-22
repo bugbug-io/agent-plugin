@@ -27,6 +27,8 @@ Resolve at least one of:
 complete, do not propose or apply a repair. Rewriting a selector because a step
 failed on a selector is a symptom fix.
 
+- Keep diagnosis/progress in reports, never tags. For requested tag changes,
+  follow `bugbug-tests-authoring` and its tagging guide; inherited tags remain.
 - Do not debug suite runs with this skill. Use test-level runs only.
 - Do not start a new run just because a `testId` was provided. Inspect the latest
   run first.

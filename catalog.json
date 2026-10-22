@@ -61,7 +61,8 @@
       ],
       "relatedSkills": [
         "bugbug-context-discovering",
-        "bugbug-selectors-authoring"
+        "bugbug-selectors-authoring",
+        "bugbug-tests-authoring"
       ]
     },
     {
@@ -70,6 +71,7 @@
       "resources": [
         "references/community-best-practices.md",
         "references/email-flows.md",
+        "references/tagging.md",
         "assets/bugbug-icon.svg"
       ],
       "relatedSkills": [

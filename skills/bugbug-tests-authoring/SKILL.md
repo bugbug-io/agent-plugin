@@ -26,6 +26,7 @@ assets, product flow descriptions, and discovered evidence.
 - Existing components, variables, suites, and profiles to reuse.
 - Target test and component folders, if the plan places assets in folders.
 - New assets to create, if any.
+- Requested tags: names, purpose, colors, and targets; otherwise leave unchanged.
 - Step-level flow: setup, user actions, and expected assertions.
 - Required credentials or test data source. Never invent secrets.
 
@@ -34,6 +35,7 @@ stop and ask for it before creating or mutating tests.
 
 ## Safety
 
+- Apply only requested/approved tags; never use tags for agent working context.
 - Keep platform mutations within the user's requested authoring scope.
 - Do not invent product intent, test data, credentials, secrets, selectors, or
   reusable asset references.
@@ -161,7 +163,10 @@ judgment behind it; *Process Flow* below owns the branching.
     - Create suite when the suite does not exist.
     - MCP tool: `bugbug_create_suite`
 
-11. **Review the created test before running it.**
+11. **Apply requested/approved tags** using `references/tagging.md`.
+    Otherwise leave tags unchanged.
+
+12. **Review the created test before running it.**
     - The test is independent and does not depend on another test's run order.
     - The setup is minimal: reused auth and targeted data prep.
     - The flow has no artificial waits.
@@ -169,14 +174,14 @@ judgment behind it; *Process Flow* below owns the branching.
     - The assertions prove the intended behavior, not just that commands executed.
     - The test is still one focused flow, not a broad demo script.
 
-12. **Run the created test.** Creation is not complete until the new test has
+13. **Run the created test.** Creation is not complete until the new test has
     been executed at least once to confirm it works.
     - Report the latest run result with the created test assets.
     - Do not mark the test ready without either a passing run or a documented
       external blocker that prevented verification.
     - MCP tool: `bugbug_run_test`, `bugbug_run_suite`
 
-13. **Repair within the original scope.** When an authored test fails, change
+14. **Repair within the original scope.** When an authored test fails, change
     only behavior covered by the original authoring request. Widening scope
     during a repair turns a debugging pass into unreviewed design work, so
     report a genuine external blocker rather than engineering around it.
@@ -209,8 +214,9 @@ flowchart TD
     M --> N{"Suite exists?"}
     N -->|no| O["Create suite"]
     N -->|yes| P["Read full suite, then update<br>(preserve runProfileId & tests)"]
-    O --> Q["Review before running"]
-    P --> Q
+    O --> TAGS["Apply requested/approved tags, if any"]
+    P --> TAGS
+    TAGS --> Q["Review before running"]
     Q --> R["Run created test<br>(watch, then read run details)"]
     R --> S{"Passed?"}
     S -->|yes| T(["Report created assets & result"])
@@ -246,6 +252,7 @@ For explicit YAML import/export, generation, validation, repair, or local
 - Step groups added: setup, actions, assertions.
 - Implemented steps and assertions, including any brittle selectors, missing data
   dependencies, or manual follow-up.
+- Tag changes and targets, if any.
 - Latest run result and repairs performed within the authorized scope.
 - Readiness to run, or the external blocker preventing verification.
 
@@ -261,3 +268,4 @@ Resolve bundled resource paths relative to this skill directory.
 - Read `references/community-best-practices.md` for maintainability review.
 - Read `references/email-flows.md` before authoring any flow that depends on a
   received email.
+- Read `references/tagging.md` before any tag mutation.

@@ -24,6 +24,8 @@ description: Analyzes and refactors BugBug tests, groups, components, suites, na
 
 - Start in read-only analysis mode. Requests to review, analyze, recommend, find
   improvements, or explain what should change do not authorize mutations.
+- For tag changes, follow `bugbug-tests-authoring` and its tagging guide;
+  preserve unrelated assignments and require explicit intent for global changes.
 - Mutate BugBug data only when the user explicitly requests execution.
 - Never delete a group or suite until replacement behavior has been verified or
   the user explicitly accepts unverified cleanup.

@@ -24,6 +24,8 @@ description: Creates, edits, reviews, validates, repairs, summarizes, and explai
 - Do not invent unsupported schema types, step actions, fields, IDs, URLs,
   selectors, references, secrets, or missing business data.
 - Repair only schema-proven or semantically proven defects. Preserve valid data.
+- Preserve tags unless changes are requested/approved; new assets default to
+  `tags: []`. Never store agent working context or credentials in tags.
 - Preserve exported slugs, variable names, and secret flags unless asked to
   change them. Generate readable kebab-case slugs only for new objects.
 - Never fabricate `component_source` or suite `test_source` values.
