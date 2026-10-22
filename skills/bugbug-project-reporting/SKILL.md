@@ -32,7 +32,9 @@ description: Creates read-only BugBug project health reports for PM and QA audie
 ## Workflow
 
 1. Page `bugbug_list_test_runs` and `bugbug_list_suite_runs` across the bounded
-   reporting window.
+   reporting window. When the window spans many pages, one `bugbug_execute`
+   script that pages `bugbug.tests.listRuns` / `bugbug.suites.listRuns` and
+   returns only the aggregates keeps raw run pages out of context.
 2. Export the project once when inventory, suite, component, or coverage context
    is required.
 3. Aggregate pass rate, failures, flakiness, staleness, and maintenance signals

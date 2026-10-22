@@ -5,7 +5,9 @@ Read the project through the BugBug MCP tools:
 1. Page through `bugbug_list_tests`, `bugbug_list_groups`,
    `bugbug_list_components`, and `bugbug_list_suites`. Keep page windows small.
 2. Read details with `bugbug_get_test`, `bugbug_get_group`, and
-   `bugbug_get_suite` only for the tests, groups, and suites in scope.
+   `bugbug_get_suite` only for the tests, groups, and suites in scope. When many
+   tests are in scope, one `bugbug_execute` script can read them with
+   `bugbug.tests.get` and return only the compared fields.
 3. Record when you read the data in your findings.
 4. Stop when the evidence is enough for a recommendation.
 5. Re-read affected tests after mutations; earlier reads may be stale.

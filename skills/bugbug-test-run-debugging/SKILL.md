@@ -75,7 +75,10 @@ Complete each phase before starting the next.
    already narrows the routing.
 4. Focus on the failed step with `bugbug_get_failed_step_run_details`.
 5. Establish reproducibility. Check earlier runs of the same test: does this step
-   fail every time, or intermittently? An intermittently failing step is a timing
+   fail every time, or intermittently? When several earlier runs need checking,
+   one `bugbug_execute` script can list them with `bugbug.tests.listRuns` and
+   return only each run's status and failed step, instead of one
+   `bugbug_get_test_run` call per run. An intermittently failing step is a timing
    or state problem, and repairing its selector will not fix it.
 
 ### Phase 2: Compare against a passing run

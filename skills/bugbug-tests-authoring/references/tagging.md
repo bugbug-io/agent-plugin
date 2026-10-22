@@ -14,9 +14,10 @@
 ## Workflow
 
 1. Call `bugbug_list_tags` for the current project.
-2. For each approved new tag, specify name, purpose, color, and targets;
-   create it with `bugbug_create_tag` before assignment. MCP rejects missing
-   names; SDK/API implicit creation must not bypass approval or palette rules.
+2. For each approved new tag, specify its purpose and targets. Assignment
+   creates missing names in the target project with the default color
+   (`#6D28D9`). Use `bugbug_create_tag` first when a specific palette color
+   is needed.
 3. Read the target with `bugbug_get_test`, `bugbug_get_suite`,
    `bugbug_get_test_run`, or `bugbug_get_suite_run`. Preserve unrelated direct
    tags and compute the complete replacement list.

@@ -7,7 +7,7 @@
     "url": "https://github.com/bugbug-io/agent-plugin",
     "source": "github"
   },
-  "version": "14.17.0",
+  "version": "14.18.0",
   "remotes": [
     {
       "type": "streamable-http",

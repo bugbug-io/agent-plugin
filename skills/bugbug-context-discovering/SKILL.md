@@ -49,6 +49,21 @@ to the next skill with the project id alone. Missing repository state is an
 expected condition on these clients, not a blocker — do not stop the work for
 it, and do not ask the user to create or link a `bugbug.yaml`.
 
+### MCP Tool Choice
+
+Use the typed `bugbug_*` MCP tools named in BugBug skills by default. Switch to
+code mode (`bugbug_execute`, signatures via `bugbug_search_api`) only when it
+clearly saves round-trips or context:
+
+- one answer needs many reads in a row, such as paging run history or fetching
+  details for every failed run;
+- only a few fields of many large payloads are needed;
+- no typed tool covers the read.
+
+Return only what the next step needs from the script. Deletes, stopping runs,
+unlinking, and baseline resolution are never available in code mode; use their
+dedicated tools after user confirmation.
+
 ## Output
 
 - Confirmed project id or the blocker preventing confirmation.
