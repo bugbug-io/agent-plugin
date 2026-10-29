@@ -1,12 +1,16 @@
 {
   "name": "bugbug",
-  "description": "BugBug workflows for AI agents workflows for AI agents",
-  "version": "14.19.1",
+  "displayName": "BugBug",
+  "description": "BugBug workflows for AI agents",
+  "version": "14.20.0",
   "author": {
     "name": "BugBug.io"
   },
   "homepage": "https://github.com/bugbug-io/agent-plugin",
   "repository": "https://github.com/bugbug-io/agent-plugin",
   "license": "MIT",
+  "icon": "./assets/openai/directory-icon.png",
+  "privacyPolicyUrl": "https://bugbug.io/privacy-policy/",
+  "supportUrl": "https://bugbug.io/contact/",
   "keywords": ["bugbug","skills","mcp","testing","automation","ai","agents","workflow","diagnosis","authoring","integration","plugin"]
 }

@@ -6,13 +6,13 @@
   },
   "metadata": {
     "description": "Development marketplace for BugBug Plugin.",
-    "version": "14.19.1"
+    "version": "14.20.0"
   },
   "plugins": [
     {
       "name": "bugbug",
-      "description": "BugBug workflows for AI agents workflows for AI agents",
-      "version": "14.19.1",
+      "description": "BugBug workflows for AI agents",
+      "version": "14.20.0",
       "source": "./"
     }
   ]
