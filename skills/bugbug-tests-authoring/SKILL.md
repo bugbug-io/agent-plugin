@@ -43,6 +43,13 @@ stop and ask for it before creating or mutating tests.
   original authoring request.
 - Stop before creating, editing, running, or importing anything when the target
   project cannot be confirmed.
+- Change an existing test in place (`bugbug_patch_test`, `bugbug_update_steps`,
+  `bugbug_update_step_position`, or YAML import with `conflictMode=overwrite`).
+  Never delete a test and create it again: that drops its folder, history and
+  run results. Updates keep steps in their original `if` block and order.
+- Place a created or imported test in a folder with `folderId` (`bugbug_create_tests`,
+  `bugbug_import_test`, `bugbug import --folder-id`); it must be an existing test
+  folder of the project. Omit it to use the project root.
 
 ## Workflow
 

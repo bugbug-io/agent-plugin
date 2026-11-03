@@ -29,7 +29,11 @@ failed on a selector is a symptom fix.
 
 - Keep diagnosis/progress in reports, never tags. For requested tag changes,
   follow `bugbug-tests-authoring` and its tagging guide; inherited tags remain.
-- Do not debug suite runs with this skill. Use test-level runs only.
+- Do not debug suite runs with this skill. Use test-level runs only. To start from
+  a failed suite run, call `bugbug_get_suite_run` (compact view by default: failed
+  tests with their failing step ID and error, a few KB even for hundreds of
+  tests; continue with `cursor`, avoid `view: "full"` on large suites), then debug
+  the failed test run and step run with the tools below.
 - Do not start a new run just because a `testId` was provided. Inspect the latest
   run first.
 - Do not mutate a test unless the user explicitly requests the specific repair.
@@ -99,7 +103,14 @@ Complete each phase before starting the next.
    evidence Y refers to.
 2. Verify the hypothesis against the DOM snapshot, screenshots, or run logs
    before touching the test. `bugbug_query_dom_snapshot_element` confirms whether
-   a selector resolves in the captured DOM.
+   a selector resolves in the captured DOM. If it returns an error (the snapshot
+   could not be downloaded, decompressed or decoded), that is missing evidence,
+   not proof that the element is absent: `exists: false` only ever means the
+   snapshot was read and the selector did not match. Fall back to screenshots,
+   run logs, or `bugbug_get_failed_step_run_details`. Read the run logs with
+   `bugbug_query_console_logs` (errors first: `levels: ["error"]`) and
+   `bugbug_query_network_requests` (`failedOnly: true`); both need run logs
+   enabled in the project settings.
 3. If the evidence contradicts the hypothesis, discard it and form a new one. Do
    not stack a second theory on top of the first.
 4. If you cannot form an evidence-backed hypothesis, say so and report what

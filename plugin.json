@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "bugbug",
-  "version": "14.20.0",
-  "description": "BugBug workflows for AI agents",
+  "version": "14.21.0",
+  "description": "BugBug test automation workflows for AI agents",
   "author": {
     "name": "BugBug.io",
     "email": "info@bugbug.io",
@@ -16,7 +16,7 @@
     "com.openai": {
       "interface": {
         "displayName": "BugBug",
-        "shortDescription": "BugBug workflows for AI agents",
+        "shortDescription": "BugBug test automation for AI",
         "longDescription": "Use this BugBug integration to configure the BugBug MCP server and guide agents through BugBug test authoring, diagnosis, and safe automation workflows.",
         "developerName": "BugBug.io",
         "developerEmail": "info@bugbug.io",

@@ -1,8 +1,8 @@
 {
   "name": "bugbug",
   "displayName": "BugBug",
-  "description": "BugBug workflows for AI agents",
-  "version": "14.20.0",
+  "description": "BugBug test automation workflows for AI agents",
+  "version": "14.21.0",
   "author": {
     "name": "BugBug.io"
   },
@@ -12,5 +12,6 @@
   "icon": "./assets/openai/directory-icon.png",
   "privacyPolicyUrl": "https://bugbug.io/privacy-policy/",
   "supportUrl": "https://bugbug.io/contact/",
+  "termsOfServiceUrl": "https://bugbug.io/terms-and-conditions/",
   "keywords": ["bugbug","skills","mcp","testing","automation","ai","agents","workflow","diagnosis","authoring","integration","plugin"]
 }

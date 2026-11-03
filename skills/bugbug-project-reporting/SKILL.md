@@ -34,7 +34,16 @@ description: Creates read-only BugBug project health reports for PM and QA audie
 1. Page `bugbug_list_test_runs` and `bugbug_list_suite_runs` across the bounded
    reporting window. When the window spans many pages, one `bugbug_execute`
    script that pages `bugbug.tests.listRuns` / `bugbug.suites.listRuns` and
-   returns only the aggregates keeps raw run pages out of context.
+   returns only the aggregates keeps raw run pages out of context. Page by
+   passing each response's `nextToken` back as `cursor` until it is `null`
+   (`do { page = await bugbug.tests.listRuns({ cursor, pageSize: 100 }); cursor =
+   page.nextToken ?? undefined } while (cursor)`), or use `bugbug.tests.getAll()` /
+   `bugbug.suites.getAll()` to read every test or suite in one call. A script may
+   make up to 1000 read calls and 50 mutating calls; the API allows roughly 100
+   requests per minute, so split very large scans into scripts that return the
+   processed cursor. For suite run details use `bugbug.suites.getRunSummary` (or
+   `bugbug_get_suite_run`, compact by default) rather than the multi-megabyte full
+   run, and drill down with `bugbug_get_failed_step_run_details`.
 2. Export the project once when inventory, suite, component, or coverage context
    is required.
 3. Aggregate pass rate, failures, flakiness, staleness, and maintenance signals

@@ -61,7 +61,12 @@ description: Creates, edits, reviews, validates, repairs, summarizes, and explai
   `bugbug tests export <testId> --format yaml`; use ZIP export when artifacts are
   needed.
 - **Import edited YAML**: Run `bugbug tests import <file.yaml>` only as allowed
-  by `Safety`.
+  by `Safety`. Add `--folder-id <testFolderId>` to import into an existing test
+  folder (it wins over a folder recorded in a ZIP; without it a new test lands
+  in the project root). To change an existing test, import with
+  `--conflict-mode overwrite`: the test keeps its identity, folder and history,
+  and nested `if` steps keep their structure. Never delete the test and
+  re-import it.
 - **Resolve a schema conflict**: Use the live `sourceUrl` recorded in
   `assets/schema-metadata.json` only when the bundled schema conflicts with a
   current import response.
