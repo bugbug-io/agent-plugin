@@ -106,7 +106,8 @@ Resolve bundled resource paths relative to this skill directory.
 - Read `references/step-actions.md` for supported actions and selector
   serialization.
 - Read `references/assertions.md` for assertion and conditional fields.
-- Read `references/variables.md` for interpolation, overrides, and secrets.
+- Read `references/variables.md` for interpolation, component parametrization,
+  and secrets.
 - Read `references/semantic-validation.md` for action-detail relationships and
   recursive validation.
 - Read `references/generation-rules.md` before generating new YAML.

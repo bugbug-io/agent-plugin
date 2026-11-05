@@ -1,6 +1,6 @@
 # Variables
 
-Use this file when YAML contains `{{name}}` interpolation, profile variables, local variables, or component/group overrides.
+Use this file when YAML contains `{{name}}` interpolation, profile variables, or local variables, or when a component needs different values per test.
 
 ## Interpolation
 
@@ -45,16 +45,22 @@ Required fields are `name`, `key`, and `type`. `value`, `description`, and `has_
 - `value`: use `value`.
 - `evaluate`: run `code`; set `is_target_document: true` when the code should execute in the target document.
 
-## Group and Component Overrides
+## Parametrizing Components
 
-Inline groups and component references can pass `variables` maps. Use them to override component placeholders without editing the component.
+Groups and component references have no `variables` field: schema validation rejects it, and import drops it without applying the values. To give a component different values, add an inline group with `setLocalVariable` steps directly before the component reference. The component reads the values through `{{name}}`.
 
 ```yaml
 groups:
+  - group_name: "Use admin account"
+    slug: "use-admin-account"
+    steps:
+      - action: setLocalVariable
+        name: "Set email"
+        action_details:
+          local_variable_name: "email"
+          local_variable_source: value
+          value: "{{admin_email}}"
   - component_source: "shared-login"
-    variables:
-      email: "{{admin_email}}"
-      password: "{{password}}"
 ```
 
 ## Secrets Policy

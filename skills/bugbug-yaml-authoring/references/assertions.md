@@ -107,10 +107,10 @@ Custom JavaScript:
 ```yaml
 - action: assert
   action_details:
+    selector: "xpath=//body"
     assertion_property: customJavaScript
     assertion_type: equal
-    assertion_java_script: "return document.readyState"
-    assertion_expected_value: "complete"
+    assertion_java_script: "return document.readyState === 'complete'"
 ```
 
 Variable value:

@@ -4,7 +4,9 @@ Read the project through the BugBug MCP tools:
 
 1. Page through `bugbug_list_tests`, `bugbug_list_groups`,
    `bugbug_list_components`, and `bugbug_list_suites`. Keep page windows small.
-2. Read details with `bugbug_get_test`, `bugbug_get_group`, and
+2. Read details with `bugbug_get_test` (`fields: ["groups"]` for the ordered
+   group and component structure), `bugbug_get_group` (`fields: ["steps"]` for full
+   steps), and
    `bugbug_get_suite` only for the tests, groups, and suites in scope. When many
    tests are in scope, one `bugbug_execute` script can read them with
    `bugbug.tests.get` and return only the compared fields.

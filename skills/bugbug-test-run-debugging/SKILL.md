@@ -77,7 +77,12 @@ Complete each phase before starting the next.
 3. Read the error code and message on the failed step before forming any opinion.
    The code (`ELEMENT_DOES_NOT_EXIST`, `FAILED_WAITING_CONDITIONS`, and similar)
    already narrows the routing.
-4. Focus on the failed step with `bugbug_get_failed_step_run_details`.
+4. Focus on the failed step with `bugbug_get_failed_step_run_details`. Its default
+   result already inlines the step's `selectorsPresets`. Add `fields` only for what
+   the failure class needs: `waitingConditions`, `computedValues` (resolved
+   variables, URL, selector), `execution`, `assertion` or `stepDefinition`. Use
+   `bugbug_get_test_run` `fields: ["stepRuns"]` to see every step run's error and
+   waiting-condition results at once.
 5. Establish reproducibility. Check earlier runs of the same test: does this step
    fail every time, or intermittently? When several earlier runs need checking,
    one `bugbug_execute` script can list them with `bugbug.tests.listRuns` and

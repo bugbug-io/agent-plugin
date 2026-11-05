@@ -19,7 +19,8 @@
    (`#6D28D9`). Use `bugbug_create_tag` first when a specific palette color
    is needed.
 3. Read the target with `bugbug_get_test`, `bugbug_get_suite`,
-   `bugbug_get_test_run`, or `bugbug_get_suite_run`. Preserve unrelated direct
+   `bugbug_get_test_run`, or `bugbug_get_suite_run`; pass `fields: ["tags"]` to
+   see its current tags (`bugbug_list_tests` and `bugbug_list_suites` take it too). Preserve unrelated direct
    tags and compute the complete replacement list.
 4. Call `bugbug_set_test_tags`, `bugbug_set_suite_tags`,
    `bugbug_set_test_run_tags`, or `bugbug_set_suite_run_tags` with at most 64

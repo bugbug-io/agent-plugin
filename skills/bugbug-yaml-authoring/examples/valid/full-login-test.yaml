@@ -9,8 +9,6 @@ data:
     - smoke
   groups:
     - component_source: 'cookie-consent'
-      variables:
-        consent_button_selector: "xpath=//button[@data-testid='accept-cookies']"
     - group_name: 'Login flow'
       slug: 'login-flow'
       steps:

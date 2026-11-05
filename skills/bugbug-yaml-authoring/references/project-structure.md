@@ -159,9 +159,8 @@ selects tests by `test_source`, which must match a test slug.
 ### `components/*.yaml`
 
 Each file contains one `schema_type: component` document. Components hold shared
-steps and are referenced by tests. Component variables should be passed through
-test group `variables` when the component needs values from a profile or test
-context.
+steps and are referenced by tests. To give a component different values per test,
+set local variables in a group before the reference; see `variables.md`.
 
 ### `profiles/*.yaml`
 
@@ -185,8 +184,6 @@ Inline groups define steps directly in the test. `group_name` and `slug` are req
 groups:
   - group_name: "Login flow"
     slug: "login-flow"
-    variables:
-      email: "{{email}}"
     steps:
       - action: goto
         name: "Open login page"
@@ -196,14 +193,11 @@ groups:
 
 ### Component Reference
 
-Component references reuse an existing component by component slug. `component_source` must name a real component. `variables` overrides are optional.
+Component references reuse an existing component by component slug. `component_source` must name a real component.
 
 ```yaml
 groups:
   - component_source: "shared-login"
-    variables:
-      email: "{{email}}"
-      password: "{{password}}"
 ```
 
 ## Test Group Import Semantics

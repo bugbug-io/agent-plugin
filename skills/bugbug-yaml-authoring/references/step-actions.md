@@ -21,7 +21,7 @@ Shared optional step fields:
 - `is_active`: boolean; omit unless intentionally disabling/enabling.
 - `notes`: free-form notes.
 - `execution`: `continue_on_failure`, `sleep`, `run_timeout`.
-- `waiting_conditions`: entries with `condition`, `expected`, `timeout`, `is_active`. Valid condition names are in `semantic-validation.md`.
+- `waiting_conditions`: entries with `condition`, `expected`, `is_active`. Valid condition names are in `semantic-validation.md`.
 - `conditional_steps`: nested steps used by `ifCondition`; validated recursively.
 
 Shared action-details fields available to many element actions:

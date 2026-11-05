@@ -38,6 +38,8 @@ whether the fix belongs in the test, the application state, or the environment.
 ### 2. Read the condition result, not only the error code
 
 - Inspect `waitingConditions.failed` and `waitingConditions.skipped` from step-run payload.
+  Fetch them with `bugbug_get_failed_step_run_details({ stepRunId, fields: ["waitingConditions"] })`,
+  or for every step run of the run with `bugbug_get_test_run({ runId, fields: ["stepRuns"] })`.
 - For every failed condition, record:
   - `type`
   - `expected`

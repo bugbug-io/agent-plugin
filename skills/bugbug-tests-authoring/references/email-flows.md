@@ -7,6 +7,10 @@ from inside the test.
 
 ## The email address and inbox identifier
 
+To read a received email, call `bugbug_get_test_run_inbox` with `messageId`; add
+`fields: ["links"]` to get the confirmation or reset links from the HTML body, or
+`fields: ["html"]` for the full body.
+
 Both values are built from `testRunId`, a built-in variable that BugBug assigns a new
 value on every run:
 
