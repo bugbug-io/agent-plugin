@@ -19,7 +19,7 @@
 | Clear a field | `clear` | Yes | Use instead of typing an empty string. |
 | Select an option | `select` | Yes | Use to simulate user selection from a dropdown. |
 | Paste clipboard content | `pasteFromClipboard` | Yes | Use when paste behavior is what the flow needs to cover; it acts on the active element. |
-| Upload a file | `uploadFile` | Yes | Requires a project artifact reference and the targeted file input. |
+| Upload a file | `uploadFile` | Yes | Requires a file from the project Files library (`projectArtifactId`) and the targeted file input. Reuse an existing file (`bugbug.files.list` in `bugbug_execute`) before uploading a new one (`bugbug_files_upload`). |
 | Answer a browser prompt | `answerPrompt` | No | Use for alert/prompt/confirm-style browser dialogs. |
 | Check DOM, text, value, URL, or script result | `assert` | Optional | Use selectors for element assertions; omit for page, variable, clipboard, download, or custom page checks. |
 | Branch based on a condition | `ifCondition` | Optional | Use selectors for element conditions; put child steps in the condition block with `blockId`. |

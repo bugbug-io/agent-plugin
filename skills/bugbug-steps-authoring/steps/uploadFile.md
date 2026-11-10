@@ -2,7 +2,7 @@
 
 ## Description
 
-Upload a project artifact into the targeted file input.
+Upload a file from the project Files library into the targeted file input.
 
 Common payload fields are documented in [Common step fields](_common-fields.md).
 
@@ -10,7 +10,7 @@ Common payload fields are documented in [Common step fields](_common-fields.md).
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `projectArtifactId` | `string` | Project artifact UUID to upload. |
+| `projectArtifactId` | `string` | ID of a file from the project Files library (max 10 MB). Reuse an existing file (`bugbug.files.list` in bugbug_execute) before uploading a new one (bugbug_files_upload). |
 
 ## Optional Fields
 

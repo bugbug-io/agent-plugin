@@ -61,7 +61,7 @@ clearly saves round-trips or context:
 - no typed tool covers the read.
 
 Return only what the next step needs from the script. Deletes, stopping runs,
-unlinking, and baseline resolution are never available in code mode; use their
+removing components, and baseline resolution are never available in code mode; use their
 dedicated tools after user confirmation.
 
 ## Output

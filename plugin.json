@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "bugbug",
-  "version": "14.22.0",
+  "version": "14.23.0",
   "description": "BugBug test automation workflows for AI agents",
   "author": {
     "name": "BugBug.io",
