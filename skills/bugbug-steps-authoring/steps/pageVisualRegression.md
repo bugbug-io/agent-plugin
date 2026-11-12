@@ -16,4 +16,3 @@ No step-specific required fields.
 | --- | --- | --- |
 | `selectorsPresets` | `array<object>` | Element selector presets required by element-targeting steps variants. |
 | `visualRegressionMaxDiff` | `number \| null` | Maximum allowed pixel difference percentage (0–100). |
-

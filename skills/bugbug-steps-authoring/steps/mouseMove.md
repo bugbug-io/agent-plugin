@@ -22,4 +22,3 @@ No step-specific required fields.
 | `mouseButtons` | `array<"left" \| "right" \| "middle" \| "back">` | Mouse buttons held while moving. |
 | `mouseMoveSteps` | `integer \| null` | Optional number of intermediate mouse-move events. |
 | `selectorsPresets` | `array<object>` | Target selectors when moving relative to an element. |
-

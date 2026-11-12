@@ -17,4 +17,3 @@ Common payload fields are documented in [Common step fields](_common-fields.md).
 | Field | Type | Description |
 | --- | --- | --- |
 | `visualRegressionMaxDiff` | `number \| null` | Maximum allowed pixel difference percentage (0–100). |
-

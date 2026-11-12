@@ -2,7 +2,7 @@
   "name": "bugbug",
   "displayName": "BugBug",
   "description": "BugBug test automation workflows for AI agents",
-  "version": "14.23.0",
+  "version": "14.23.1",
   "author": {
     "name": "BugBug.io"
   },

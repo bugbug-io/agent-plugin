@@ -36,9 +36,7 @@ Fields on each level:
 - **Group** — `id`, `relation`, `selectors[]`.
 - **Selector** — `id`, `type`, `selector`, `isActive`, `score`.
 
-Selector `type` is `XPath` or `CSS` when you author it by hand
-(`customXPath` and `customCSS` are used for user's manual selectors). Leave `score` as `null` —
-it is assigned, not authored.
+Selector `type` is one of `XPath`, `customXPath` or `customCSS`.
 
 ## How a preset resolves
 
@@ -284,7 +282,7 @@ selector: "xpath=//span[normalize-space()='Item name'] << xpath=.//div[contains(
 
 ## Example: CSS instead of XPath
 
-Same single-group shape, with `type` set to `CSS` and the `css=` prefix in
+Same single-group shape, with `type` set to `customCSS` and the `css=` prefix in
 YAML. Prefer XPath unless the CSS form is genuinely clearer.
 
 ```json
@@ -300,7 +298,7 @@ YAML. Prefer XPath unless the CSS form is genuinely clearer.
         "selectors": [
           {
             "id": "selector-target-css",
-            "type": "CSS",
+            "type": "customCSS",
             "selector": "button[data-testid='save']",
             "isActive": true,
             "score": null

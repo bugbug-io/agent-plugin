@@ -25,4 +25,3 @@ Common payload fields are documented in [Common step fields](_common-fields.md).
 | `dndDropX` | `number \| null` | Drop X coordinate when dropping by coordinates. |
 | `dndDropY` | `number \| null` | Drop Y coordinate when dropping by coordinates. |
 | `selectorsPresets` | `array<object>` | Element selector presets required by element-targeting steps variants. |
-

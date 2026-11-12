@@ -22,4 +22,3 @@ Common payload fields are documented in [Common step fields](_common-fields.md).
 | `scrollX` | `number \| null` | Horizontal scroll coordinate. |
 | `scrollY` | `number \| null` | Vertical scroll coordinate. |
 | `selectorsPresets` | `array<object>` | Element selector presets required by element-targeting steps variants. |
-

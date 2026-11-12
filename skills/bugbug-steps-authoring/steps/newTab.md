@@ -18,4 +18,3 @@ No step-specific required fields.
 | `selectorsPresets` | `array<object>` | Element selector presets required by element-targeting steps variants. |
 | `url` | `string \| null` | URL to open in the new tab. |
 | `username` | `string \| null` | Optional username for basic authentication. |
-

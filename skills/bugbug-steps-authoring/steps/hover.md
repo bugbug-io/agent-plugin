@@ -16,4 +16,3 @@ Common payload fields are documented in [Common step fields](_common-fields.md).
 ## Optional Fields
 
 No step-specific optional fields.
-

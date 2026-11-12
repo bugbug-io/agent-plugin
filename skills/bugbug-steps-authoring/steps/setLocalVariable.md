@@ -20,4 +20,3 @@ Common payload fields are documented in [Common step fields](_common-fields.md).
 | `code` | `string \| null` | JavaScript source used when evaluating a variable value. |
 | `selectorsPresets` | `array<object>` | Element selector presets required by element-targeting steps variants. |
 | `value` | `string` | Literal value to store when using the value source. |
-

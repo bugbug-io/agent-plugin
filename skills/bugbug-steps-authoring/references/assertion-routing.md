@@ -35,6 +35,12 @@ Use this routing when creating an `assert` step or an `ifCondition`.
 | Clipboard value | `clipboardValue` | No | Use after copy/paste flows that change clipboard content. |
 | Custom JavaScript result | `customJavaScript` | Optional | Use only for checks that built-in properties cannot express. |
 
+## Assertion expected values
+
+Boolean properties (`exist`, `notExist`, `visible`, `notVisible`, `checked`,
+`notChecked`, `disabled`, `notDisabled`, `hasNotAttribute`) require
+`assertionExpectedValue` set to `"true"` or `"false"`.
+
 ## Assertion operators
 
 | Intent | `assertionType` | Notes |

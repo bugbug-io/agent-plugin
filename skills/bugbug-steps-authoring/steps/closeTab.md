@@ -15,4 +15,3 @@ No step-specific required fields.
 | Field | Type | Description |
 | --- | --- | --- |
 | `selectorsPresets` | `array<object>` | Element selector presets required by element-targeting steps variants. |
-

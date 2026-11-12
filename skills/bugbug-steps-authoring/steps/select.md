@@ -19,4 +19,3 @@ Common payload fields are documented in [Common step fields](_common-fields.md).
 | Field | Type | Description |
 | --- | --- | --- |
 | `selectorsPresets` | `array<object>` | Element selector presets required by element-targeting steps variants. |
-
