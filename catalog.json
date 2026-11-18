@@ -8,7 +8,15 @@
         "references/project-context.md",
         "references/repository-state.md",
         "references/tested-app-repository-context.md",
-        "assets/bugbug-icon.svg"
+        "assets/bugbug-icon.png"
+      ],
+      "relatedSkills": []
+    },
+    {
+      "name": "bugbug-feedback-reporting",
+      "description": "Collects problems with BugBug itself during an agent session (errors, missing features, confusing tool behavior, documentation gaps, workarounds) and sends one support-ready report per problem with bugbug_send_feedback. Use when a BugBug tool fails unexpectedly, the goal cannot be met with BugBug, or a workaround was needed.",
+      "resources": [
+        "assets/bugbug-icon.png"
       ],
       "relatedSkills": []
     },
@@ -16,7 +24,7 @@
       "name": "bugbug-project-reporting",
       "description": "Creates read-only BugBug project health reports for PM and QA audiences using run-history aggregates and optional export-based inventory analysis. Use for project health, trends, release risk, flakiness, stale tests, or coverage reporting. Run bugbug-context-discovering first.",
       "resources": [
-        "assets/bugbug-icon.svg"
+        "assets/bugbug-icon.png"
       ],
       "relatedSkills": [
         "bugbug-context-discovering"
@@ -28,7 +36,7 @@
       "resources": [
         "references/presets.md",
         "references/strategies.md",
-        "assets/bugbug-icon.svg"
+        "assets/bugbug-icon.png"
       ],
       "relatedSkills": [
         "bugbug-context-discovering"
@@ -40,7 +48,7 @@
       "resources": [
         "references/assertion-routing.md",
         "references/step-type-routing.md",
-        "assets/bugbug-icon.svg",
+        "assets/bugbug-icon.png",
         "steps/"
       ],
       "relatedSkills": [
@@ -57,7 +65,7 @@
         "references/variables-troubleshooting.md",
         "references/visual-regression-review.md",
         "references/waiting-conditions-results-check.md",
-        "assets/bugbug-icon.svg"
+        "assets/bugbug-icon.png"
       ],
       "relatedSkills": [
         "bugbug-context-discovering",
@@ -72,7 +80,7 @@
         "references/community-best-practices.md",
         "references/email-flows.md",
         "references/tagging.md",
-        "assets/bugbug-icon.svg"
+        "assets/bugbug-icon.png"
       ],
       "relatedSkills": [
         "bugbug-context-discovering",
@@ -91,7 +99,7 @@
         "references/ecommerce-tests-guidebook.md",
         "references/saas-tests-guidebook.md",
         "scripts/discover-site.mjs",
-        "assets/bugbug-icon.svg"
+        "assets/bugbug-icon.png"
       ],
       "relatedSkills": [
         "bugbug-context-discovering",
@@ -108,7 +116,7 @@
         "references/project-analysis.md",
         "references/readability-rename.md",
         "references/suite-organization.md",
-        "assets/bugbug-icon.svg"
+        "assets/bugbug-icon.png"
       ],
       "relatedSkills": [
         "bugbug-context-discovering",
@@ -129,7 +137,7 @@
         "references/semantic-validation.md",
         "references/step-actions.md",
         "references/variables.md",
-        "assets/bugbug-icon.svg",
+        "assets/bugbug-icon.png",
         "assets/bugbug-yaml-v1.schema.json",
         "assets/schema-metadata.json"
       ],

@@ -1,8 +1,8 @@
 interface:
   display_name: "Discover BugBug context"
   short_description: "Discover BugBug project, repository, and tested application context."
-  icon_small: "./assets/bugbug-icon.svg"
-  icon_large: "./assets/bugbug-icon.svg"
+  icon_small: "./assets/bugbug-icon.png"
+  icon_large: "./assets/bugbug-icon.png"
 
 dependencies:
   tools:

@@ -26,6 +26,7 @@
 | Store a value for later use | `setLocalVariable` | Optional | Use selectors for element-sourced values; omit for literal or evaluated values. |
 | Compare a stable component/region screenshot | `elementVisualRegression` | Yes | Prefer over full-page visual checks when possible. Provide `selectorsPresets` for the visual container being compared. |
 | Compare the full page screenshot | `pageVisualRegression` | No | Use only when full-page visual coverage is necessary; full-page checks are more likely to be flaky. Do not provide element selectors. |
+| Check the page for WCAG accessibility issues | `accessibilityCheck` | Optional | Provide `selectorsPresets` only with `accessibilityScope: element`; omit them for a whole-page scan. Place after the interaction that reveals the state to scan (logged in, modal open, form errors shown). Leave standard and threshold `null` to use project defaults. Requires the accessibility testing feature; checks are available on all plans, including Free. WCAG report downloads require a paid plan. |
 | Run custom JavaScript | `execute` | No | Use only for complex interactions, setup, or extraction that do not fit another step type. |
 
 ## Hard rules

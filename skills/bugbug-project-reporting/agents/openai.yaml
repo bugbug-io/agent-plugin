@@ -1,8 +1,8 @@
 interface:
   display_name: "Prepare BugBug project quality report"
   short_description: "Create evidence-based BugBug project health reports."
-  icon_small: "./assets/bugbug-icon.svg"
-  icon_large: "./assets/bugbug-icon.svg"
+  icon_small: "./assets/bugbug-icon.png"
+  icon_large: "./assets/bugbug-icon.png"
 
 dependencies:
   tools:

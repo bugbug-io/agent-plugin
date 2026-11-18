@@ -80,7 +80,7 @@ dedicated tools after user confirmation.
 
 Resolve bundled resource paths relative to this skill directory.
 
-- `assets/bugbug-icon.svg` is the OpenAI UI icon for this skill.
+- `assets/bugbug-icon.png` is the OpenAI UI icon for this skill.
 - Read `references/project-context.md` to resolve the target BugBug project.
 - Read `references/repository-state.md` before relying on local source evidence
   or editing local files.

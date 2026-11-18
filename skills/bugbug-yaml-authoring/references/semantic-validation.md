@@ -20,6 +20,7 @@ Schema validation checks structure. Semantic validation checks whether the selec
 | `ifCondition` | `assertion_property`, `assertion_type`, `conditional_steps` | assertion companion fields from `assertions.md` |
 | `dragAndDrop` | | `dnd_drag_on`, drag coords/selector, `dnd_drop_on`, drop coords/selector |
 | `elementVisualRegression`, `pageVisualRegression` | | `visual_regression_ref_screenshots` with `file_source` or `project_artifact_id` when references are supplied |
+| `accessibilityCheck` | `selector` when `accessibility_scope: element` | `accessibility_*` fields from `step-actions.md`; omit them to use project defaults |
 
 Actions not listed above use empty action details or shared selector fields only: `goBack`, `goForward`, `reloadPage`, `pasteFromClipboard`, `closeTab`, `switchContext`.
 

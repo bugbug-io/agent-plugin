@@ -1,8 +1,8 @@
 interface:
   display_name: "Refactor existing BugBug tests"
   short_description: "Analyze and refactor BugBug test organization and reuse."
-  icon_small: "./assets/bugbug-icon.svg"
-  icon_large: "./assets/bugbug-icon.svg"
+  icon_small: "./assets/bugbug-icon.png"
+  icon_large: "./assets/bugbug-icon.png"
 
 dependencies:
   tools:

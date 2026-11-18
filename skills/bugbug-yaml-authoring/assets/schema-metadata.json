@@ -2,6 +2,8 @@
   "name": "BugBug YAML Schema v1",
   "schemaVersion": "1.0",
   "sourceUrl": "https://app.bugbug.io/api/v2/schema/yaml/v1/",
-  "downloadedAt": "2026-06-22",
-  "format": "JSON Schema Draft-07"
+  "format": "JSON Schema Draft-07",
+  "generatedFrom": "docs/schema/v1/yaml_v1.schema.json",
+  "generatedAt": "2026-11-13",
+  "sha256": "1f2b224dd05f0d3332ef95e6ee1b9f6486f6fd9484de3f00051b41674d8fea92"
 }

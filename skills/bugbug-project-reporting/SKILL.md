@@ -76,5 +76,5 @@ the skill workflow and return summary data only.
 
 Resolve bundled resource paths relative to this skill directory.
 
-- `assets/bugbug-icon.svg` is the OpenAI UI icon for this skill.
+- `assets/bugbug-icon.png` is the OpenAI UI icon for this skill.
 - Load `bugbug-context-discovering` during Preflight.

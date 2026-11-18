@@ -1,8 +1,8 @@
 interface:
   display_name: "Plan BugBug test coverage"
   short_description: "Plan BugBug end-to-end and UI test coverage."
-  icon_small: "./assets/bugbug-icon.svg"
-  icon_large: "./assets/bugbug-icon.svg"
+  icon_small: "./assets/bugbug-icon.png"
+  icon_large: "./assets/bugbug-icon.png"
 
 dependencies:
   tools:

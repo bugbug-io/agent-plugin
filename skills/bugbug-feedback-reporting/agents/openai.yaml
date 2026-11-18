@@ -1,0 +1,13 @@
+interface:
+  display_name: "Report BugBug feedback"
+  short_description: "Send support-ready feedback about BugBug problems and gaps."
+  icon_small: "./assets/bugbug-icon.png"
+  icon_large: "./assets/bugbug-icon.png"
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "bugbug"
+      description: "BugBug MCP server"
+      transport: "streamable_http"
+      url: "https://mcp.bugbug.io/mcp"

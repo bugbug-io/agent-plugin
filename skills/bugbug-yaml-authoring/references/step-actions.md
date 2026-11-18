@@ -12,6 +12,7 @@
 - [Drag and Drop](#drag-and-drop)
 - [Tabs and Context](#tabs-and-context)
 - [Visual Regression](#visual-regression)
+- [Accessibility](#accessibility)
 
 Every step requires `action` and `action_details`.
 
@@ -327,4 +328,26 @@ Optional:
       - file_source: "artifacts/hero-baseline.png"
         browser_name: "Chrome"
         screen_size_type: "desktop"
+```
+
+## Accessibility
+
+### `accessibilityCheck`
+
+Optional (omit or use `null` to inherit project defaults):
+
+- `accessibility_standard`: `wcag2a`, `wcag2aa`, `wcag21aa` or `wcag22aa`.
+- `accessibility_detect_issues_type`: `critical`, `serious`, `moderate` or `minor`.
+- `accessibility_include_best_practices`: boolean.
+- `accessibility_scope`: `page` (default) or `element`. With `element`, set `selector` to the element to scan.
+- `accessibility_disabled_rules`: list of axe-core rule IDs to skip. Omit to use the project default; an empty list skips nothing.
+- `selector` is used only when `accessibility_scope` is `element`; otherwise the step scans the whole page.
+
+```yaml
+- action: accessibilityCheck
+  action_details:
+    accessibility_standard: wcag22aa
+    accessibility_detect_issues_type: serious
+    accessibility_scope: element
+    selector: "css=main"
 ```

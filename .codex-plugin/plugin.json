@@ -1,6 +1,6 @@
 {
   "name": "bugbug",
-  "version": "14.23.1",
+  "version": "14.24.0",
   "description": "BugBug test automation workflows for AI agents",
   "author": {
     "name": "BugBug.io",
@@ -34,8 +34,8 @@
     "supportURL": "https://bugbug.io/contact/",
     "privacyPolicyURL": "https://bugbug.io/privacy-policy/",
     "termsOfServiceURL": "https://bugbug.io/terms-and-conditions/",
-    "composerIcon": "./assets/bugbug-icon.svg",
-    "logo": "./assets/bugbug-icon.svg",
+    "composerIcon": "./assets/openai/composer-icon.png",
+    "logo": "./assets/bugbug-icon.png",
     "screenshots": [],
     "brandColor": "#4F46E5"
   }

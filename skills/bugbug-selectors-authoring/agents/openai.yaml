@@ -1,8 +1,8 @@
 interface:
   display_name: "Create BugBug selectors"
   short_description: "Create, review, and repair stable BugBug element selectors."
-  icon_small: "./assets/bugbug-icon.svg"
-  icon_large: "./assets/bugbug-icon.svg"
+  icon_small: "./assets/bugbug-icon.png"
+  icon_large: "./assets/bugbug-icon.png"
 
 dependencies:
   tools:

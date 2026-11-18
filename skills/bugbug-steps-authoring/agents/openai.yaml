@@ -1,8 +1,8 @@
 interface:
   display_name: "Manage BugBug steps"
   short_description: "Create and update BugBug test steps."
-  icon_small: "./assets/bugbug-icon.svg"
-  icon_large: "./assets/bugbug-icon.svg"
+  icon_small: "./assets/bugbug-icon.png"
+  icon_large: "./assets/bugbug-icon.png"
 
 dependencies:
   tools:
