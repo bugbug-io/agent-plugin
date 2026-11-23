@@ -1,0 +1,13 @@
+interface:
+  display_name: "Use BugBug code mode"
+  short_description: "Create, edit, and inspect content (tests, suites, test runs, suite runs, variables, profiles, files, tags, folders) in BugBug Cloud"
+  icon_small: "./assets/bugbug-icon.png"
+  icon_large: "./assets/bugbug-icon.png"
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "bugbug"
+      description: "BugBug MCP server"
+      transport: "streamable_http"
+      url: "https://mcp.bugbug.io/mcp"

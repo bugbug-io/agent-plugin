@@ -52,8 +52,9 @@ it, and do not ask the user to create or link a `bugbug.yaml`.
 ### MCP Tool Choice
 
 Use the typed `bugbug_*` MCP tools named in BugBug skills by default. Switch to
-code mode (`bugbug_execute`, signatures via `bugbug_search_api`) only when it
-clearly saves round-trips or context:
+code mode (`bugbug_use_bugbug`) only when it clearly saves round-trips or
+context. Read the `bugbug-use-bugbug` skill before the first call; it documents
+every function:
 
 - one answer needs many reads in a row, such as paging run history or fetching
   details for every failed run;

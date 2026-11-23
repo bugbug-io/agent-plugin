@@ -4,6 +4,6 @@
   "sourceUrl": "https://app.bugbug.io/api/v2/schema/yaml/v1/",
   "format": "JSON Schema Draft-07",
   "generatedFrom": "docs/schema/v1/yaml_v1.schema.json",
-  "generatedAt": "2026-11-13",
-  "sha256": "1f2b224dd05f0d3332ef95e6ee1b9f6486f6fd9484de3f00051b41674d8fea92"
+  "generatedAt": "2026-11-20",
+  "sha256": "5fa4d52aea8c0468c3ef428a1a5ffd39497c1c5dfabb53784e9f2230e6756c65"
 }

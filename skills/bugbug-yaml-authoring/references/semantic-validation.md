@@ -17,6 +17,8 @@ Schema validation checks structure. Semantic validation checks whether the selec
 | `setLocalVariable` | `local_variable_name`, `local_variable_source` | `selector`, `value`, or `code` depending on source |
 | `answerPrompt` | `value` | |
 | `uploadFile` | `file_source` or `project_artifact_id` | `selector` |
+| `mediaSource` | `media_source_kind` | `file_source` or `project_artifact_id` |
+| `geolocation` | `geolocation_mode` | `geolocation_latitude` + `geolocation_longitude` (both or neither), `geolocation_accuracy` |
 | `ifCondition` | `assertion_property`, `assertion_type`, `conditional_steps` | assertion companion fields from `assertions.md` |
 | `dragAndDrop` | | `dnd_drag_on`, drag coords/selector, `dnd_drop_on`, drop coords/selector |
 | `elementVisualRegression`, `pageVisualRegression` | | `visual_regression_ref_screenshots` with `file_source` or `project_artifact_id` when references are supplied |

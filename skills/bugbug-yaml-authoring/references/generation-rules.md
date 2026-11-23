@@ -25,6 +25,7 @@ A runnable browser test needs:
 - `schema_type: test`
 - `data.runtime: browser`
 - `data.screen_size`: `desktop`, `mobile`, or `custom`
+- `data.browser` (optional): browser settings the test overrides (`geolocation_permission`, `geolocation_latitude`, `geolocation_longitude`, `geolocation_accuracy`, `media_devices_permission`, `media_source_video`, `media_source_audio`); omit it to use the project settings
 - `data.groups[]`
 - an inline group with `group_name`, `slug`, and `steps[]`, or a component reference with `component_source`
 

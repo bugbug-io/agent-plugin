@@ -155,6 +155,32 @@ Required semantically: `file_source` or `project_artifact_id`. Optional: `select
     file_source: "artifacts/invoice.pdf"
 ```
 
+### `mediaSource`
+
+Required: `media_source_kind` (`audio` or `video`). Optional: `file_source` or `project_artifact_id`
+(WAV, MP3, OGG, M4A or FLAC up to 60 s for audio, WebM/MP4 for video, max 10 MB); without a file the default fake device is used.
+
+```yaml
+- action: mediaSource
+  action_details:
+    media_source_kind: audio
+    file_source: "artifacts/voice.wav"
+```
+
+### `geolocation`
+
+Required: `geolocation_mode` (`allow` or `deny`). For `allow`, `geolocation_latitude` and `geolocation_longitude`
+go together; `geolocation_accuracy` (meters) is optional. For `deny`, coordinates are ignored.
+
+```yaml
+- action: geolocation
+  action_details:
+    geolocation_mode: allow
+    geolocation_latitude: 52.2297
+    geolocation_longitude: 21.0122
+    geolocation_accuracy: 25
+```
+
 ### `pasteFromClipboard`
 
 No action-specific fields. Usually use `selector`.

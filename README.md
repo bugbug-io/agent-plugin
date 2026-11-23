@@ -23,7 +23,7 @@ endpoint at `https://mcp.bugbug.io/mcp`.
 - **Turn requirements into coverage** — Use BugBug's workflow guidance and live
   project context to plan coverage, then create tests from an approved plan.
 - **Build with live BugBug context** — Combine **50 MCP tools** and **8 workflow
-  prompts** with **10 skills** so your agent can inspect the tests, suites,
+  prompts** with **11 skills** so your agent can inspect the tests, suites,
   profiles, and project details it needs.
 - **Debug from evidence** — Investigate failed runs with run details, failure
   diagnostics, screenshots, and DOM snapshots, guided by a safe debugging
@@ -54,6 +54,7 @@ Skills are available on all BugBug plans. MCP access requires Pro or higher.
 | `bugbug-tests-authoring`     | Create and maintain tests from an approved plan.                         |
 | `bugbug-tests-planning`      | Plan end-to-end and UI test coverage.                                    |
 | `bugbug-tests-refactoring`   | Analyze and refactor tests, groups, components, and suites.              |
+| `bugbug-use-bugbug`          | Run JavaScript against the BugBug SDK with `bugbug_use_bugbug`.          |
 | `bugbug-yaml-authoring`      | Create, validate, repair, and explain BugBug YAML.                       |
 
 ## When to use it

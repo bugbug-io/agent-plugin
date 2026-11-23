@@ -8,7 +8,7 @@ Read the project through the BugBug MCP tools:
    group and component structure), `bugbug_get_group` (`fields: ["steps"]` for full
    steps), and
    `bugbug_get_suite` only for the tests, groups, and suites in scope. When many
-   tests are in scope, one `bugbug_execute` script can read them with
+   tests are in scope, one `bugbug_use_bugbug` script can read them with
    `bugbug.tests.get` and return only the compared fields.
 3. Record when you read the data in your findings.
 4. Stop when the evidence is enough for a recommendation.

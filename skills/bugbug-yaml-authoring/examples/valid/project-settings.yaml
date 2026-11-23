@@ -14,6 +14,16 @@ data:
       collecting_logs: disabled
     browser:
       incognito_mode: true
+      custom_headers:
+        - name: X-Debug
+          value: enabled
+        - name: X-Experimental
+          value: preview
+          is_active: false
+      blocked_scripts:
+        - value: widget.example.com
+        - value: analytics.example.com
+          is_active: false
     screen_sizes:
       desktop:
         width: 1366

@@ -10,7 +10,9 @@
         "references/tested-app-repository-context.md",
         "assets/bugbug-icon.png"
       ],
-      "relatedSkills": []
+      "relatedSkills": [
+        "bugbug-use-bugbug"
+      ]
     },
     {
       "name": "bugbug-feedback-reporting",
@@ -61,6 +63,7 @@
       "description": "Validates and debugs BugBug test runs. Use to inspect an existing or latest test run, classify failures, inspect logs, DOM snapshots, screenshots, focus on a failed step run, or find a supported fix.",
       "resources": [
         "references/assertion-troubleshooting.md",
+        "references/script-blocking.md",
         "references/selectors-troubleshooting.md",
         "references/variables-troubleshooting.md",
         "references/visual-regression-review.md",
@@ -123,6 +126,23 @@
         "bugbug-selectors-authoring",
         "bugbug-steps-authoring",
         "bugbug-tests-authoring"
+      ]
+    },
+    {
+      "name": "bugbug-use-bugbug",
+      "description": "Explains how to call the BugBug API through the `bugbug_use_bugbug` MCP tool, which runs a short JavaScript function body against the global `bugbug` object. Use before the first `bugbug_use_bugbug` call, whenever a task needs several BugBug reads or writes in a row, only a few fields of large payloads, a project-wide scan, or no typed `bugbug_*` tool covers the operation.",
+      "resources": [
+        "references/authoring.md",
+        "references/project.md",
+        "references/runs-and-debugging.md",
+        "references/runtime.md",
+        "references/suites.md",
+        "references/tests.md",
+        "assets/bugbug-icon.png"
+      ],
+      "relatedSkills": [
+        "bugbug-context-discovering",
+        "bugbug-test-run-debugging"
       ]
     },
     {

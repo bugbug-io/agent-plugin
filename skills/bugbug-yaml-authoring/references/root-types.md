@@ -27,6 +27,7 @@ Required `data` fields:
 - `name`
 - `runtime`: `browser` or `api`.
 - `screen_size`: `desktop`, `mobile`, or `custom`.
+- `browser` (optional): browser settings this test overrides, in the same fields as the project `settings.browser` (`geolocation_permission`, `geolocation_latitude`, `geolocation_longitude`, `geolocation_accuracy`, `media_devices_permission`, `media_source_video`, `media_source_audio`). Omit it, or a field, to use the project settings. The `geolocation` step fails when the effective location permission is `disabled`.
 
 Optional/common fields:
 
@@ -125,7 +126,9 @@ Optional/common fields:
 `settings.browser` fields:
 
 - Required: `incognito_mode`.
-- Optional: `language`, `user_agent`, `custom_headers` (`name`, `value`).
+- Optional: `language`, `user_agent`, `custom_headers` (`name`, `value`, `is_active`),
+  `blocked_scripts` (`value` containing a host or HTTP(S) URL pattern, `is_active`; up to 100 entries).
+- `is_active` defaults to `true` for both headers and blocked scripts. Set it to `false` to keep an entry without applying it.
 
 `settings.screen_sizes` fields:
 

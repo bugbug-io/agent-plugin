@@ -85,7 +85,7 @@ Complete each phase before starting the next.
    waiting-condition results at once.
 5. Establish reproducibility. Check earlier runs of the same test: does this step
    fail every time, or intermittently? When several earlier runs need checking,
-   one `bugbug_execute` script can list them with `bugbug.tests.listRuns` and
+   one `bugbug_use_bugbug` script can list them with `bugbug.tests.listRuns` and
    return only each run's status and failed step, instead of one
    `bugbug_get_test_run` call per run. An intermittently failing step is a timing
    or state problem, and repairing its selector will not fix it.
@@ -213,4 +213,6 @@ Resolve bundled resource paths relative to this skill directory.
   `FAILED_WAITING_CONDITIONS` diagnosis and repair decisions.
 - Read `references/variables-troubleshooting.md` for unresolved, empty, or wrong
   variable diagnosis, including profile scope and secret placeholders.
+- Read `references/script-blocking.md` when a marketing popup or third-party widget
+  covers the page and a script blocking rule may fix it.
 - Load `bugbug-selectors-authoring` before changing DOM-targeted steps.
